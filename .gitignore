@@ -1,0 +1,6 @@
+node_modules
+out
+build
+# Sentry Config File
+.sentryclirc
+dist
