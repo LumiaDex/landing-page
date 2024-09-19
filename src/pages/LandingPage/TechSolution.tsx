@@ -49,10 +49,34 @@ export default function TechSolution() {
   ];
   return (
     <div className="max-w-[1440px] px-16 mx-auto pt-24 w-full">
-      <div className="text-primary text-[64px] font-normal text-center">
+      {/* <div className="text-primary text-[64px] font-normal text-center">
         Tech Solution
-      </div>
-      <div className="mt-10">
+      </div> */}
+      <fieldset className="border border-primary w-full h-[865px] mx-auto rounded-[40px]">
+        <legend className="mx-16">
+          <span className="text-primary text-[64px] font-normal px-5">
+            Tech Solution
+          </span>
+        </legend>
+
+        <div className="h-full w-full flex items-center justify-center">
+          <div className="flex flex-wrap justify-center gap-x-[100px] gap-y-20 ">
+            {items.map(({ title, image }) => (
+              <div
+                className={cn(
+                  "flex items-center justify-center flex-col gap-4"
+                )}
+              >
+                <img src={image} className="w-[200px] h-auto" />
+                <div className="text-2xl max-w-[288px] font-light text-center">
+                  {title}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </fieldset>
+      {/* <div className="mt-10">
         <div className="grid grid-cols-4">
           <div>
             <div className="mt-[25%]">
@@ -74,7 +98,7 @@ export default function TechSolution() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

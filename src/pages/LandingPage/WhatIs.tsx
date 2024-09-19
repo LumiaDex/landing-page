@@ -20,7 +20,7 @@ export default function WhatIs() {
 
   return (
     <div className="max-w-[1440px] px-16 mx-auto pt-24 w-full">
-      <div className="text-primary text-2xl font-light">What is Cassus?</div>
+      <div className="text-2xl font-normal text-white">What is Cassus?</div>
       <div className="flex flex-row w-full items-center">
         <div className="basis-3/5 ">
           <div className="text-[48px] font-normal leading-[1.4em] text-white max-w-[688px]">
@@ -35,8 +35,7 @@ export default function WhatIs() {
           </div>
         </div>
       </div>
-
-      <div className="mt-24 flex flex-col md:flex-row gap-6 justify-between items-center">
+      {/* <div className="mt-24 flex flex-col md:flex-row gap-6 justify-between items-center">
         {items.map(({ title, image }) => (
           <div
             key={title}
@@ -46,7 +45,7 @@ export default function WhatIs() {
             <div className="text-2xl font-normal text-white">{title}</div>
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }

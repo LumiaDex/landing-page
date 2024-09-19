@@ -1,8 +1,28 @@
 import BgImg from "@/assets/images/landing-secction-1.png";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef } from "react";
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Intro() {
+  const bgRef = useRef(null); // Reference for the background image
+
+  // useEffect(() => {
+  //   // Parallax effect on the background image
+  //   gsap.to(bgRef.current, {
+  //     yPercent: 50, // Adjust this value to control the parallax effect
+  //     ease: "none",
+  //     scrollTrigger: {
+  //       trigger: bgRef.current,
+  //       start: "top bottom", // When the effect starts
+  //       end: "bottom top", // When the effect ends
+  //       scrub: true, // Smooth scrolling effect
+  //     },
+  //   });
+  // }, []);
   return (
     <div
+      ref={bgRef}
       style={{
         backgroundImage: `url(${BgImg})`,
       }}
@@ -22,23 +42,6 @@ export default function Intro() {
             <span className="text-xl font-medium text-black">Enter Cassus</span>
             <ArrowIcon />
           </button>
-        </div>
-      </div>
-      <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-10 backdrop-blur-[30px] ">
-        <div className="flex justify-between items-center h-[92px] px-12">
-          {["Powered by Lumia", "Powered by Lumia", "Powered by Lumia"].map(
-            (element, idx) => (
-              <>
-                <div
-                  key={`running-${idx}`}
-                  className="text-primary text-xl font-normal md:tracking-[0.4em]"
-                >
-                  {element}
-                </div>
-                <div className="h-6 w-[1px] bg-primary" />
-              </>
-            )
-          )}
         </div>
       </div>
     </div>
