@@ -74,10 +74,12 @@ const Card = ({ title, items }: { title: string; items: string[] }) => {
 export default function RoadMap() {
   return (
     <div className="mx-auto flex flex-col items-center mt-24">
-      <div className="text-[64px] font-normal text-primary">Roadmap</div>
-      <img src={RoadmapImg} />
+      <div className="md:text-[64px] text-[32px] font-normal text-primary pb-10 md:pb-0">
+        Roadmap
+      </div>
+      <img className="w-full hidden md:block" src={RoadmapImg} />
       <div className="w-full max-w-[1440px] px-16 mx-auto">
-        <div className="flex gap-10 justify-between">
+        <div className="flex flex-col md:flex-row gap-10 justify-between">
           <Card title={items[0].title} items={items[0].items} />
           <Card title={items[1].title} items={items[1].items} />
           <Card title={items[2].title} items={items[2].items} />

@@ -26,11 +26,11 @@ export default function Intro() {
       style={{
         backgroundImage: `url(${BgImg})`,
       }}
-      className="pt-[84px] relative h-[937px] bg-cover bg-center bg-no-repeat"
+      className="pt-[84px] relative md:h-[937px] h-[600px] bg-cover bg-center bg-no-repeat"
     >
-      <div className="max-w-[1440px] absolute top-1/2 -translate-y-1/2 px-16 mx-auto">
+      <div className="max-w-[1440px] md:absolute md:top-1/2 md:-translate-y-1/2 md:px-16 px-4 mx-auto">
         <div className="w-full max-w-[567px]">
-          <h1 className="text-[64px] leading-[84px] font-normal text-white">
+          <h1 className="text-[48px] leading-[64px] font-normal text-white md:text-[64px] md:leading-[84px]">
             Invest in DeFi, <br />
             redefine your yield
           </h1>
