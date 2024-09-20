@@ -1,4 +1,6 @@
+import BgMbImg from "@/assets/images/landing-secction-1-mb.png";
 import BgImg from "@/assets/images/landing-secction-1.png";
+import { isMobile } from "@/utils/devices";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
@@ -24,22 +26,24 @@ export default function Intro() {
     <div
       ref={bgRef}
       style={{
-        backgroundImage: `url(${BgImg})`,
+        backgroundImage: `url(${isMobile() ? BgMbImg : BgImg})`,
       }}
-      className="pt-[84px] relative md:h-[937px] h-[600px] bg-cover bg-center bg-no-repeat"
+      className="pt-16 md:pt-[84px] relative md:h-[937px] h-[800px] bg-cover bg-center bg-no-repeat"
     >
       <div className="max-w-[1440px] md:absolute md:top-1/2 md:-translate-y-1/2 md:px-16 px-4 mx-auto">
         <div className="w-full max-w-[567px]">
-          <h1 className="text-[48px] leading-[64px] font-normal text-white md:text-[64px] md:leading-[84px]">
+          <h1 className="text-[40px] leading-[1.3em] font-normal text-white md:text-[64px] md:leading-[84px]">
             Invest in DeFi, <br />
             redefine your yield
           </h1>
-          <div className="text-xl leading-[32px] tracking-[0.02em] mt-3">
+          <div className="text-[#C0C0C0] md:text-white text-base md:text-xl leading-[32px] tracking-[0.02em] mt-3">
             A cross-chain borrowing and lending protocol for NFTs, liquidity
             positions, synthetic assets and real world assets.
           </div>
-          <button className="bg-primary h-[64px] rounded-xl flex items-center gap-2 px-6 mt-10">
-            <span className="text-xl font-medium text-black">Enter Cassus</span>
+          <button className="bg-primary h-12 md:h-[64px] rounded-xl flex items-center gap-2 px-3 md:px-6 mt-10">
+            <span className="text-base md:text-xl font-medium text-black">
+              Enter Cassus
+            </span>
             <ArrowIcon />
           </button>
         </div>

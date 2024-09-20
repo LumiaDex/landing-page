@@ -1,5 +1,7 @@
 import CardBgImg from "@/assets/images/card-road-map.png";
 import RoadmapImg from "@/assets/images/roadmap-line.png";
+import StartGreenImg from "@/assets/images/start-green.png";
+
 import { cn } from "@/utils/cn";
 
 const items = [
@@ -58,6 +60,12 @@ const Card = ({
       //   backgroundImage: `url(${CardBgImg})`,
       // }}
     >
+      <div>
+        <img
+          src={StartGreenImg}
+          className="w-26 h-26 absolute left-[-50px] block md:hidden"
+        />
+      </div>
       <img className="w-full h-full absolute inset-0" src={CardBgImg} />
       <div
         className={cn(
@@ -85,7 +93,7 @@ const Card = ({
 export default function RoadMap() {
   return (
     <div className="mx-auto flex flex-col items-center mt-24">
-      <div className="md:text-[64px] text-[32px] font-normal text-primary ">
+      <div className="md:text-[64px] text-[40px] font-normal text-primary ">
         Roadmap
       </div>
       <img className="w-full hidden lg:block" src={RoadmapImg} />

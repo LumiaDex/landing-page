@@ -1,16 +1,35 @@
 import LogoImg from "@/assets/images/logo.png";
 import { ROUTES } from "@/routes/paths.route";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+
+const MenuIcon = () => (
+  <svg
+    width="16"
+    height="14"
+    viewBox="0 0 16 14"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M16 1H0" stroke="#03D181" stroke-width="2" />
+    <path d="M16 7H0" stroke="#03D181" stroke-width="2" />
+    <path d="M16 13H0" stroke="#03D181" stroke-width="2" />
+  </svg>
+);
 
 export default function Header() {
   const navigate = useNavigate();
+  const [active, setActive] = useState(false);
+  const handleClick = () => {
+    setActive((pre) => !pre);
+  };
   return (
-    <div className="h-[84px] w-full bg-white bg-opacity-10 flex flex-row justify-between  items-center px-6 z-[1000]">
+    <div className="h-14 md:h-[84px] w-full bg-white bg-opacity-10 flex flex-row justify-between items-center px-6 z-[1000]">
       <div className="md:basis-1/5">
         <img
           onClick={() => navigate(ROUTES.LANDING_PAGE)}
           src={LogoImg}
-          className="w-[120px] h-auto cursor-pointer md:w-[186px]"
+          className="w-[109px] h-auto cursor-pointer md:w-[186px]"
         />
       </div>
       <div className="md:basis-1/5">
@@ -23,11 +42,48 @@ export default function Header() {
         </div>
       </div>
       <div className="md:basis-3/5">
-        <button className="bg-primary h-12 rounded-lg flex items-center gap-2 ml-auto px-3">
+        <button className="bg-primary hidden md:flex h-12 rounded-lg items-center gap-2 ml-auto px-3">
           <span className="text-xl font-medium text-black">Enter Cassus</span>
           <ArrowIcon />
         </button>
       </div>
+      <div
+        onClick={handleClick}
+        className="md:hidden relative flex items-center gap-1"
+      >
+        <span className="text-primary font-bold text-xl tracking-[-0.04em] uppercase">
+          Menu
+        </span>
+        <MenuIcon />
+      </div>
+
+      {active && (
+        <>
+          <div
+            onClick={handleClick}
+            className="absolute w-[100vw] h-[100svh] inset-0 bg-transparent z-[10000]"
+          ></div>
+          <div className="absolute z-[10001] top-14 bg-black rounded-[24px] border border-primary right-0 rounded-tr-none p-10">
+            <div className="flex flex-col gap-10">
+              <div className="text-2xl font-normal text-white">About Us</div>
+              <div className="text-2xl font-normal text-white">Features</div>
+              <div className="text-2xl font-normal text-white">
+                CASSUS Token
+              </div>
+              <div className="text-2xl font-normal text-white">
+                Airdrop Program
+              </div>
+
+              <button className="bg-primary w-fit flex h-12 rounded-lg items-center gap-2 px-3">
+                <span className="text-xl font-medium text-black">
+                  Enter Cassus
+                </span>
+                <ArrowIcon />
+              </button>
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 }

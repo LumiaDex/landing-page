@@ -31,14 +31,6 @@ export default function TechSolution() {
       image: Tech1Img,
     },
     {
-      title: "Partial Liquidations",
-      image: Tech2Img,
-    },
-    {
-      title: "RWA Collateral Support",
-      image: Tech3Img,
-    },
-    {
       title: "Cross-Chain Functionality & NFT Focus",
       image: Tech4Img,
     },
@@ -46,29 +38,34 @@ export default function TechSolution() {
       title: "Institutional-Grade Offering (Cassus Pro)",
       image: Tech5Img,
     },
+    {
+      title: "Partial Liquidations",
+      image: Tech2Img,
+    },
+    {
+      title: "RWA Collateral Support",
+      image: Tech3Img,
+    },
   ];
   return (
     <div className="max-w-[1440px] md:px-16 px-4 mx-auto pt-24 w-full">
-      {/* <div className="text-primary text-[64px] font-normal text-center">
-        Tech Solution
-      </div> */}
       <fieldset className="border border-primary w-full pb-10  mx-auto rounded-[40px]">
         <legend className="md:mx-16 mx-4">
-          <span className="text-primary md:text-[64px] text-[32px] font-normal px-5">
+          <span className="text-primary md:text-[64px] text-[40px] font-normal px-5">
             Tech Solution
           </span>
         </legend>
 
         <div className="h-full w-full flex items-center justify-center">
-          <div className="flex flex-col md:flex-row md:flex-wrap md:justify-center md:gap-x-[100px] md:gap-y-20 ">
+          <div className="flex flex-wrap justify-around md:justify-center md:gap-x-[100px] md:gap-y-20 ">
             {items.map(({ title, image }) => (
               <div
                 className={cn(
                   "flex items-center justify-center flex-col gap-4 md:mt-0 mt-10"
                 )}
               >
-                <img src={image} className="md:w-[200px] w-[130px] h-auto" />
-                <div className="md:text-2xl text-base max-w-[288px] font-light text-center">
+                <img src={image} className="md:w-[200px] w-[120px] h-auto" />
+                <div className="md:text-2xl text-base max-w-[160px] md:max-w-[288px] font-light text-center">
                   {title}
                 </div>
               </div>
