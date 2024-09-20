@@ -39,10 +39,21 @@ const items = [
   },
 ];
 
-const Card = ({ title, items }: { title: string; items: string[] }) => {
+const Card = ({
+  title,
+  items,
+  className,
+}: {
+  title: string;
+  items: string[];
+  className?: string;
+}) => {
   return (
     <div
-      className="w-[299px] h-auto pb-5 relative bg-contain bg-top bg-no-repeat"
+      className={cn(
+        "w-[299px] h-auto md:min-h-[260px] lg:min-h-[300px] pb-5 relative bg-contain bg-top bg-no-repeat",
+        className
+      )}
       // style={{
       //   backgroundImage: `url(${CardBgImg})`,
       // }}
@@ -57,7 +68,7 @@ const Card = ({ title, items }: { title: string; items: string[] }) => {
         {title}
       </div>
       <div className="ml-9 mt-5">
-        <ul className="list-disc">
+        <ul className="list-disc pr-1">
           {items.map((item) => (
             <li
               key={item}
@@ -74,14 +85,32 @@ const Card = ({ title, items }: { title: string; items: string[] }) => {
 export default function RoadMap() {
   return (
     <div className="mx-auto flex flex-col items-center mt-24">
-      <div className="text-[64px] font-normal text-primary">Roadmap</div>
-      <img src={RoadmapImg} />
-      <div className="w-full max-w-[1440px] px-16 mx-auto">
-        <div className="flex gap-10 justify-between">
-          <Card title={items[0].title} items={items[0].items} />
-          <Card title={items[1].title} items={items[1].items} />
-          <Card title={items[2].title} items={items[2].items} />
-          <Card title={items[3].title} items={items[3].items} />
+      <div className="md:text-[64px] text-[32px] font-normal text-primary ">
+        Roadmap
+      </div>
+      <img className="w-full hidden lg:block" src={RoadmapImg} />
+      <div className="w-full max-w-[1440px] px-16 mx-auto mt-10 lg:mt-0">
+        <div className="flex flex-col flex-wrap lg:flex-nowrap md:flex-row gap-10 justify-around items-center lg:justify-between">
+          <Card
+            className="relative lg:-top-20"
+            title={items[0].title}
+            items={items[0].items}
+          />
+          <Card
+            className="relative"
+            title={items[1].title}
+            items={items[1].items}
+          />
+          <Card
+            className="relative lg:-top-10"
+            title={items[2].title}
+            items={items[2].items}
+          />
+          <Card
+            className="relative lg:-top-28"
+            title={items[3].title}
+            items={items[3].items}
+          />
         </div>
       </div>
     </div>

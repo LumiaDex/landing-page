@@ -5,16 +5,16 @@ import { useNavigate } from "react-router-dom";
 export default function Header() {
   const navigate = useNavigate();
   return (
-    <div className="h-[84px] w-full bg-white bg-opacity-10 flex flex-row items-center px-6 z-[1000]">
-      <div className="sm:basis-1/5">
+    <div className="h-[84px] w-full bg-white bg-opacity-10 flex flex-row justify-between  items-center px-6 z-[1000]">
+      <div className="md:basis-1/5">
         <img
           onClick={() => navigate(ROUTES.LANDING_PAGE)}
           src={LogoImg}
-          className="w-[186px] h-auto cursor-pointer"
+          className="w-[120px] h-auto cursor-pointer md:w-[186px]"
         />
       </div>
-      <div className="sm:basis-1/5">
-        <div className="flex items-center gap-4">
+      <div className="md:basis-1/5">
+        <div className="hidden md:flex items-center gap-4">
           {["Markets", "Docs", "Bridge"].map((element) => (
             <div className="text-xl font-normal text-white" key={element}>
               {element}
@@ -22,7 +22,7 @@ export default function Header() {
           ))}
         </div>
       </div>
-      <div className="sm:basis-3/5">
+      <div className="md:basis-3/5">
         <button className="bg-primary h-12 rounded-lg flex items-center gap-2 ml-auto px-3">
           <span className="text-xl font-medium text-black">Enter Cassus</span>
           <ArrowIcon />

@@ -48,27 +48,27 @@ export default function TechSolution() {
     },
   ];
   return (
-    <div className="max-w-[1440px] px-16 mx-auto pt-24 w-full">
+    <div className="max-w-[1440px] md:px-16 px-4 mx-auto pt-24 w-full">
       {/* <div className="text-primary text-[64px] font-normal text-center">
         Tech Solution
       </div> */}
-      <fieldset className="border border-primary w-full h-[865px] mx-auto rounded-[40px]">
-        <legend className="mx-16">
-          <span className="text-primary text-[64px] font-normal px-5">
+      <fieldset className="border border-primary w-full pb-10  mx-auto rounded-[40px]">
+        <legend className="md:mx-16 mx-4">
+          <span className="text-primary md:text-[64px] text-[32px] font-normal px-5">
             Tech Solution
           </span>
         </legend>
 
         <div className="h-full w-full flex items-center justify-center">
-          <div className="flex flex-wrap justify-center gap-x-[100px] gap-y-20 ">
+          <div className="flex flex-col md:flex-row md:flex-wrap md:justify-center md:gap-x-[100px] md:gap-y-20 ">
             {items.map(({ title, image }) => (
               <div
                 className={cn(
-                  "flex items-center justify-center flex-col gap-4"
+                  "flex items-center justify-center flex-col gap-4 md:mt-0 mt-10"
                 )}
               >
-                <img src={image} className="w-[200px] h-auto" />
-                <div className="text-2xl max-w-[288px] font-light text-center">
+                <img src={image} className="md:w-[200px] w-[130px] h-auto" />
+                <div className="md:text-2xl text-base max-w-[288px] font-light text-center">
                   {title}
                 </div>
               </div>
