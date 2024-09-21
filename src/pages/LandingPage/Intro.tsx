@@ -1,6 +1,5 @@
-import BgMbImg from "@/assets/images/landing-secction-1-mb.png";
-import BgImg from "@/assets/images/landing-secction-1.png";
-import { isMobile } from "@/utils/devices";
+import BgMP4 from "@/assets/video/steel.mp4";
+import BgWebm from "@/assets/video/steel.webm";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
@@ -25,12 +24,20 @@ export default function Intro() {
   return (
     <div
       ref={bgRef}
-      style={{
-        backgroundImage: `url(${isMobile() ? BgMbImg : BgImg})`,
-      }}
-      className="pt-16 md:pt-[84px] relative md:h-[937px] h-[800px] bg-cover bg-center bg-no-repeat"
+      className="pt-16 overflow-hidden md:pt-[84px] relative md:h-[937px] h-[800px] bg-cover bg-center bg-no-repeat"
     >
-      <div className="max-w-[1440px] md:absolute md:top-1/2 md:-translate-y-1/2 md:px-16 px-4 mx-auto">
+      <video
+        autoPlay
+        muted
+        playsInline
+        loop
+        className=" h-2/3 md:h-full object-cover absolute bottom-0 md:left-1/4 z-0"
+      >
+        <source src={BgWebm} type="video/webm" />
+        <source src={BgMP4} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div className="max-w-[1440px] relative md:absolute md:top-1/2 md:-translate-y-1/2 md:px-16 px-4 mx-auto">
         <div className="w-full max-w-[567px]">
           <h1 className="text-[40px] leading-[1.3em] font-normal text-white md:text-[64px] md:leading-[84px]">
             Invest in DeFi, <br />

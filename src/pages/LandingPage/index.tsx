@@ -64,7 +64,7 @@ export default function LandingPage() {
             })`,
           }}
           className={cn(
-            "md:h-[200px] h-[393px] w-full bg-white bg-opacity-10 bg-left-bottom md:bg-auto backdrop-blur-[30px] bg-no-repeat",
+            "md:h-[402px] h-[393px] w-full bg-white bg-opacity-10 bg-left-bottom md:bg-auto backdrop-blur-[30px] bg-no-repeat",
             "flex items-center justify-center relative"
           )}
         >
