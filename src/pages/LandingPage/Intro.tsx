@@ -47,7 +47,12 @@ export default function Intro() {
             A cross-chain borrowing and lending protocol for NFTs, liquidity
             positions, synthetic assets and real world assets.
           </div>
-          <button className="bg-primary h-12 md:h-[64px] rounded-xl flex items-center gap-2 px-3 md:px-6 mt-10">
+          <button
+            onClick={() => {
+              window.open("https://app.cassus.org/");
+            }}
+            className="bg-primary h-12 md:h-[64px] rounded-xl flex items-center gap-2 px-3 md:px-6 mt-10"
+          >
             <span className="text-base md:text-xl font-medium text-black">
               Enter Cassus
             </span>

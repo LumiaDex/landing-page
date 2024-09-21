@@ -12,7 +12,12 @@ export default function Footer() {
         className="w-full absolute block md:hidden"
         src={FooterSession1MbImg}
       />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer group flex items-center justify-center flex-col">
+      <div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer group flex items-center justify-center flex-col"
+        onClick={() => {
+          window.open("https://app.cassus.org/");
+        }}
+      >
         <div className="lg:text-[96px] leading-[48px] md:text-[64px] w-max lg:w-full text-[40px] font-normal text-center group-hover:text-primary transition-all duration-300">
           Enter Cassus
         </div>

@@ -44,7 +44,12 @@ export default function Header() {
         </div>
       </div>
       <div className="md:basis-2/5">
-        <button className="bg-primary hidden md:flex h-12 rounded-lg items-center gap-2 ml-auto px-3">
+        <button
+          onClick={() => {
+            window.open("https://app.cassus.org/");
+          }}
+          className="bg-primary hidden md:flex h-12 rounded-lg items-center gap-2 ml-auto px-3"
+        >
           <span className="text-xl font-medium text-black">Enter Cassus</span>
           <ArrowIcon />
         </button>
@@ -76,7 +81,12 @@ export default function Header() {
                 Airdrop Program
               </div>
 
-              <button className="bg-primary w-fit flex h-12 rounded-lg items-center gap-2 px-3">
+              <button
+                onClick={() => {
+                  window.open("https://app.cassus.org/");
+                }}
+                className="bg-primary w-fit flex h-12 rounded-lg items-center gap-2 px-3"
+              >
                 <span className="text-xl font-medium text-black">
                   Enter Cassus
                 </span>
