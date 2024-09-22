@@ -24,7 +24,7 @@ export default function Intro() {
   return (
     <div
       ref={bgRef}
-      className="pt-16 overflow-hidden md:pt-[84px] relative md:h-[937px] h-[800px] bg-cover bg-center bg-no-repeat"
+      className=" pt-16 overflow-hidden md:pt-0 relative md:h-[937px] h-[800px] bg-cover bg-center bg-no-repeat"
     >
       <video
         autoPlay
@@ -37,7 +37,7 @@ export default function Intro() {
         <source src={BgMP4} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      <div className="max-w-[1440px] relative md:absolute md:top-1/2 md:-translate-y-1/2 md:px-16 px-4 mx-auto">
+      <div className="max-w-[1440px] md:top-1/2 md:-translate-y-1/2 relative md:px-16 px-4 my-auto mx-auto">
         <div className="w-full max-w-[567px]">
           <h1 className="text-[40px] leading-[1.3em] font-normal text-white md:text-[64px] md:leading-[84px]">
             Invest in DeFi, <br />
