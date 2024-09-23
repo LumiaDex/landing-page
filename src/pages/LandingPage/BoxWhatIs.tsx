@@ -6,6 +6,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
+import { isMobile } from "@/utils/devices";
 import { useEffect, useRef } from "react";
 import WhatIs from "./WhatIs";
 
@@ -14,75 +15,62 @@ export default function BoxWhatIs() {
   const boxRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (boxRef.current) {
-        const rect = boxRef.current.getBoundingClientRect();
-        const distanceFromTop = rect.top + window.scrollY; // Distance from the top of the page
-        const boxHeight = boxRef.current.clientHeight; // Height of the box element
-        const scrollY = window.scrollY; // Current scroll position
+    if (boxRef.current) {
+      const distance = isMobile() ? 150 : 600;
+      // GSAP ScrollTrigger to animate the first and third image positions
+      gsap.fromTo(
+        imageRefs.current[0],
+        { x: isMobile() ? 100 : 200 },
+        {
+          x: -distance, // Move left
+          scrollTrigger: {
+            trigger: boxRef.current, // Trigger based on boxRef
+            start: "top bottom", // Start animation when top of box reaches the bottom of viewport
+            end: "bottom top", // End animation when bottom of box reaches top of viewport
+            scrub: true, // Smooth animation following the scroll
+          },
+        }
+      );
 
-        // Calculate the percentage the box is scrolled into view
-        const percentScrolled =
-          -0.3 + (distanceFromTop + window.innerHeight - scrollY) / boxHeight;
-        console.log();
-        const height = window.innerWidth / 5;
-        const spacing = percentScrolled * height;
-        imageRefs.current[0]!.style.left = `${
-          spacing > window.innerWidth / 5 ? 86 : spacing
-        }px`;
-        imageRefs.current[2]!.style.right = `${
-          spacing > window.innerWidth / 5 ? 86 : spacing
-        }px`;
-      }
-    };
-
-    // Add scroll event listener
-    window.addEventListener("scroll", handleScroll);
-
-    // Cleanup event listener on component unmount
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+      gsap.fromTo(
+        imageRefs.current[2],
+        { x: isMobile() ? -100 : -200 },
+        {
+          x: distance, // Move right
+          scrollTrigger: {
+            trigger: boxRef.current, // Trigger based on boxRef
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+          },
+        }
+      );
+    }
   }, []);
-  // useEffect(() => {
-  //   // GSAP animation for the images, expanding left and right (width)
-  //   imageRefs.current.forEach((img) => {
-  //     gsap.fromTo(
-  //       img,
-  //       { x: 300 },
-  //       {
-  //         x: -300,
-  //         scrollTrigger: {
-  //           trigger: ".box-container",
-  //           start: "top top",
-  //           end: "bottom bottom",
-  //           scrub: true,
-  //         },
-  //       }
-  //     );
-  //   });
-  // }, []);
-
   return (
     <div ref={boxRef} className="box-container">
       <WhatIs />
       <div className="relative w-full overflow-hidden">
-        <img className="w-auto block mx-auto mt-6" src={CassusBgImg} />
+        <img className="w-auto mx-auto mt-6" src={CassusBgImg} />
 
-        <div className="flex gap-1 top-10 md:top-20 items-center w-full absolute left-1/2 -translate-x-1/2">
+        <div className="top-10 md:top-20 items-center left-1/2  absolute -translate-x-1/2">
           <img
             ref={(el) => (imageRefs.current[0] = el)}
-            className=" mx-auto w-[120px] md:w-auto mt-6 relative left-[320px]"
+            className=" mx-auto w-[120px] md:w-[307px] mt-6 relative "
             src={Cassus01Img}
           />
+        </div>
+        <div className="top-10 md:top-20 items-center left-1/2  absolute -translate-x-1/2">
           <img
             ref={(el) => (imageRefs.current[1] = el)}
-            className=" mx-auto w-[120px] md:w-auto mt-6 relative"
+            className=" mx-auto w-[120px] md:w-[307px] mt-6 relative "
             src={Cassus02Img}
           />
+        </div>
+        <div className="top-10 md:top-20 items-center left-1/2  absolute -translate-x-1/2">
           <img
             ref={(el) => (imageRefs.current[2] = el)}
-            className=" mx-auto w-[120px] md:w-auto mt-6 relative right-[320px]"
+            className=" mx-auto w-[120px] md:w-[307px] mt-6 relative "
             src={Cassus03Img}
           />
         </div>
