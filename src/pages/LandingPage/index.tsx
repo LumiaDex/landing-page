@@ -1,7 +1,5 @@
 import FooterSession1MbImg from "@/assets/images/bg-footer-section-1-mb.png";
 import FooterSession1Img from "@/assets/images/bg-footer-section-1.png";
-import DefiGroupMbImg from "@/assets/images/defi-group-mobile.png";
-import DefiGroupImg from "@/assets/images/defi-group.png";
 import BgImg from "@/assets/images/landing-secction-2.png";
 import StartGrayImg from "@/assets/images/start-gray.png";
 import { Header } from "@/components";
@@ -12,11 +10,11 @@ import { isMobile } from "@/utils/devices";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
+import BoxWhatIs from "./BoxWhatIs";
 import Footer from "./Footer";
 import Intro from "./Intro";
 import RoadMap from "./RoadMap";
 import TechSolution from "./TechSolution";
-import WhatIs from "./WhatIs";
 
 // Register the ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -105,16 +103,7 @@ export default function LandingPage() {
           }}
           className="min-h-[100vh] relative bg-cover bg-center bg-no-repeat md:pb-20 pb-10"
         >
-          <WhatIs />
-          <img
-            className="w-auto hidden md:block mx-auto mt-6"
-            src={DefiGroupImg}
-          />
-          <img
-            className="w-full block md:hidden mx-auto mt-6"
-            src={DefiGroupMbImg}
-          />
-
+          <BoxWhatIs />
           <TechSolution />
 
           <RoadMap />
