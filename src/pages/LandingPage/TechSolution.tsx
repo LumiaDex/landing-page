@@ -48,10 +48,10 @@ export default function TechSolution() {
     },
   ];
   return (
-    <div className="max-w-[1440px] md:px-16 px-4 mx-auto pt-24 w-full">
+    <div className="max-w-[1440px] md:px-16 px-4 mx-auto pt-10 w-full">
       <fieldset className="border border-primary w-full pb-10  mx-auto rounded-[40px]">
         <legend className="md:mx-16 mx-4">
-          <span className="text-primary md:text-[64px] text-[40px] font-normal px-5">
+          <span className="text-primary md:text-[56px] text-[40px] font-normal px-5">
             Tech Solution
           </span>
         </legend>

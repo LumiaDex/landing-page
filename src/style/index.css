@@ -50,3 +50,7 @@ body {
 .layer3 {
   background-color: lightcoral;
 }
+
+img {
+  will-change: transform;
+}

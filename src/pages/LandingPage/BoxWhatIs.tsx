@@ -16,42 +16,51 @@ export default function BoxWhatIs() {
 
   useEffect(() => {
     if (boxRef.current) {
-      const distance = isMobile() ? 150 : 600;
-      // GSAP ScrollTrigger to animate the first and third image positions
+      const distanceX = isMobile() ? 150 : 600;
+      const distanceY = isMobile() ? 100 : 400;
       gsap.fromTo(
         imageRefs.current[0],
-        { x: isMobile() ? 100 : 200 },
+        { x: isMobile() ? 100 : 200, y: -distanceY + (isMobile() ? 100 : 200) },
         {
-          x: -distance, // Move left
+          x: -distanceX, // Move left
+          y: distanceY,
+          delay: 0.5, // 0.5-second delay before starting the animation
+          // ease: "power2.inOut", // Smooth easing
           scrollTrigger: {
             trigger: boxRef.current, // Trigger based on boxRef
             start: "top bottom", // Start animation when top of box reaches the bottom of viewport
             end: "bottom top", // End animation when bottom of box reaches top of viewport
-            scrub: true, // Smooth animation following the scroll
+            scrub: 1, // Smooth animation following the scroll
           },
         }
       );
 
       gsap.fromTo(
         imageRefs.current[2],
-        { x: isMobile() ? -100 : -200 },
         {
-          x: distance, // Move right
+          x: isMobile() ? -100 : -200,
+          y: distanceY - (isMobile() ? 100 : 200),
+        },
+        {
+          x: distanceX, // Move right
+          y: -distanceY,
+          delay: 0.5, // 0.5-second delay before starting the animation
+          // ease: "power2.inOut", // Smooth easing
           scrollTrigger: {
             trigger: boxRef.current, // Trigger based on boxRef
             start: "top bottom",
             end: "bottom top",
-            scrub: true,
+            scrub: 1,
           },
         }
       );
     }
   }, []);
   return (
-    <div ref={boxRef} className="box-container">
+    <div ref={boxRef} className="box-container overflow-hidden relative pb-20">
       <WhatIs />
-      <div className="relative w-full overflow-hidden">
-        <img className="w-auto mx-auto mt-6" src={CassusBgImg} />
+      <div className="relative w-full">
+        <img className="w-auto mx-auto mt-6 pt-6 md:pt-0" src={CassusBgImg} />
 
         <div className="top-10 md:top-20 items-center left-1/2  absolute -translate-x-1/2">
           <img

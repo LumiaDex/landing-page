@@ -1,12 +1,8 @@
-import FooterSession1MbImg from "@/assets/images/bg-footer-section-1-mb.png";
-import FooterSession1Img from "@/assets/images/bg-footer-section-1.png";
 import BgImg from "@/assets/images/landing-secction-2.png";
-import StartGrayImg from "@/assets/images/start-gray.png";
 import { Header } from "@/components";
 import PageLayout from "@/layouts/PageLayout";
 import { cn } from "@/utils/cn";
 
-import { isMobile } from "@/utils/devices";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
@@ -22,7 +18,18 @@ gsap.registerPlugin(ScrollTrigger);
 export default function LandingPage() {
   const parallaxRef = useRef(null);
   const divRef = useRef<HTMLDivElement>(null);
+  const textRef = useRef<HTMLDivElement>(null);
   const percentRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const textElement = textRef.current;
+
+    gsap.to(textElement, {
+      xPercent: -100, // Move it all the way to the left (based on content width)
+      ease: "none",
+      duration: 10, // Adjust this for the speed you want
+      repeat: -1, // Infinite repeat
+    });
+  }, []);
 
   useEffect(() => {
     gsap.to(divRef.current, {
@@ -41,6 +48,7 @@ export default function LandingPage() {
             ? 1
             : window.scrollY / divRef.current.clientHeight;
         percentRef.current!.style.width = `${percent * 100}%`;
+        // textRef.current!.style.transform = `translateX(${-percent * 100}%)`;
       }
     });
     return () => {
@@ -56,44 +64,64 @@ export default function LandingPage() {
           <Intro />
         </div>
         <div
-          style={{
-            backgroundImage: `url(${
-              isMobile() ? FooterSession1MbImg : FooterSession1Img
-            })`,
-          }}
           className={cn(
-            "md:h-[402px] h-[393px] w-full bg-white bg-opacity-10 bg-left-bottom md:bg-auto backdrop-blur-[30px] bg-no-repeat",
-            "flex items-center justify-center relative"
+            "md:h-[104px] h-[84px] w-full bg-white bg-opacity-10 bg-left-bottom md:bg-auto backdrop-blur-[30px]",
+            "flex items-center justify-center relative overflow-hidden"
           )}
         >
           <div
             ref={percentRef}
             className="w-0 h-[1px] absolute top-0 left-0 bg-primary"
           ></div>
-          <div className="flex items-center gap-3">
-            <div className="md:text-[64px]  text-[32px] font-normal">
-              Powered by Lumia
-            </div>
-            <img className="md:w-[91px] w-[40px] h-full" src={StartGrayImg} />
-          </div>
-          <div className="absolute bottom-0 left-0 right-0">
-            <div className="text-xl font-normal tracking-[0.4em] md:hidden text-[#03d18250] text-center mb-3">
-              Powered by Lumia
-            </div>
-            <div className="justify-between items-center h-[92px] px-12 hidden md:flex">
-              {["Powered by Lumia", "Powered by Lumia", "Powered by Lumia"].map(
-                (element, idx) => (
-                  <>
-                    <div
-                      key={`running-${idx}`}
-                      className="text-[#03d18250] text-xl font-normal md:tracking-[0.4em]"
-                    >
-                      {element}
-                    </div>
-                    <div className="h-6 w-[2px] bg-[#03d18250]" />
-                  </>
-                )
-              )}
+          <div className="absolute top-1/2 -translate-y-1/2 left-0  right-0">
+            <div
+              ref={textRef}
+              className="justify-between items-center h-[92px] px-12 w-full flex gap-20"
+            >
+              {[
+                "Powered by Lumia",
+                "Powered by Lumia",
+                "Powered by Lumia",
+                "Powered by Lumia",
+                "Powered by Lumia",
+                "Powered by Lumia",
+                "Powered by Lumia",
+                "Powered by Lumia",
+                "Powered by Lumia",
+                "Powered by Lumia",
+                "Powered by Lumia",
+                "Powered by Lumia",
+                "Powered by Lumia",
+                "Powered by Lumia",
+                "Powered by Lumia",
+                "Powered by Lumia",
+                "Powered by Lumia",
+                "Powered by Lumia",
+                "Powered by Lumia",
+                "Powered by Lumia",
+                "Powered by Lumia",
+                "Powered by Lumia",
+                "Powered by Lumia",
+                "Powered by Lumia",
+                "Powered by Lumia",
+                "Powered by Lumia",
+                "Powered by Lumia",
+                "Powered by Lumia",
+                "Powered by Lumia",
+                "Powered by Lumia",
+                "Powered by Lumia",
+                "Powered by Lumia",
+              ].map((element, idx) => (
+                <>
+                  <div
+                    key={`running-${idx}`}
+                    className="text-[#03d18250] text-xl min-w-max relative font-normal md:tracking-[0.4em]"
+                  >
+                    {element}
+                    <div className="h-6 absolute -left-10 top-1/2 -translate-y-1/2 w-[2px] bg-[#03d18250]" />
+                  </div>
+                </>
+              ))}
             </div>
           </div>
         </div>

@@ -36,7 +36,7 @@ export default function Header() {
         <div className="hidden md:flex items-center gap-4">
           {["About Us", "Features", "CASSUS Token", "Airdrop Program"].map(
             (element) => (
-              <div className="text-xl font-normal text-white" key={element}>
+              <div className="text-lg font-normal text-white" key={element}>
                 {element}
               </div>
             )
@@ -50,7 +50,7 @@ export default function Header() {
           }}
           className="bg-primary hidden md:flex h-12 rounded-lg items-center gap-2 ml-auto px-3"
         >
-          <span className="text-xl font-medium text-black">Enter Cassus</span>
+          <span className="text-lg font-medium text-black">Enter Cassus</span>
           <ArrowIcon />
         </button>
       </div>
