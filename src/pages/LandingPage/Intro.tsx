@@ -1,5 +1,7 @@
-import BgMP4 from "@/assets/video/steel.mp4";
-import BgWebm from "@/assets/video/steel.webm";
+import {
+  default as BgMP4,
+  default as BgWebm,
+} from "@/assets/video/steel-v2.webm";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
