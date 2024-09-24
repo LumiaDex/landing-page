@@ -16,11 +16,11 @@ export default function BoxWhatIs() {
 
   useEffect(() => {
     if (boxRef.current) {
-      const distanceX = isMobile() ? 150 : 600;
-      const distanceY = isMobile() ? 100 : 400;
+      const distanceX = isMobile() ? 80 : 250;
+      const distanceY = isMobile() ? 20 : 100;
       gsap.fromTo(
         imageRefs.current[0],
-        { x: isMobile() ? 100 : 200, y: -distanceY + (isMobile() ? 100 : 200) },
+        { x: 0, y: -distanceY + (isMobile() ? 10 : 100) },
         {
           x: -distanceX, // Move left
           y: distanceY,
@@ -38,8 +38,8 @@ export default function BoxWhatIs() {
       gsap.fromTo(
         imageRefs.current[2],
         {
-          x: isMobile() ? -100 : -200,
-          y: distanceY - (isMobile() ? 100 : 200),
+          x: 0,
+          y: distanceY - (isMobile() ? 10 : 50),
         },
         {
           x: distanceX, // Move right
@@ -60,7 +60,7 @@ export default function BoxWhatIs() {
     <div ref={boxRef} className="box-container overflow-hidden relative pb-20">
       <WhatIs />
       <div className="relative w-full">
-        <img className="w-auto mx-auto mt-6 pt-6 md:pt-0" src={CassusBgImg} />
+        <img className="w-auto mx-auto mt-6 pt-10 md:pt-0" src={CassusBgImg} />
 
         <div className="top-10 md:top-20 items-center left-1/2  absolute -translate-x-1/2">
           <img
