@@ -10,6 +10,13 @@ gsap.registerPlugin(ScrollTrigger);
 import { useEffect, useRef, useState } from "react";
 import WhatIs from "./WhatIs";
 
+enum Screen {
+  Mobile = "Mobile",
+  Tablet = "Tablet",
+  Desktop = "Desktop",
+  None = "",
+}
+
 export default function BoxWhatIs() {
   const imageRefs = useRef<(HTMLImageElement | null)[]>([]);
   const boxRef = useRef<HTMLDivElement>(null);
@@ -21,20 +28,18 @@ export default function BoxWhatIs() {
     large: 1280,
   };
 
-  const [device, setDevice] = useState("");
+  const [device, setDevice] = useState(Screen.None);
 
   useEffect(() => {
     // Function to determine the device type based on window width
     const updateDeviceType = () => {
       const width = window.innerWidth;
-      if (width >= breakpoints.large) {
-        setDevice("Large");
-      } else if (width >= breakpoints.desktop) {
-        setDevice("Desktop");
+      if (width >= breakpoints.desktop) {
+        setDevice(Screen.Desktop);
       } else if (width >= breakpoints.tablet) {
-        setDevice("Tablet");
+        setDevice(Screen.Tablet);
       } else {
-        setDevice("Mobile");
+        setDevice(Screen.Mobile);
       }
     };
 
@@ -51,19 +56,23 @@ export default function BoxWhatIs() {
   }, []);
 
   useEffect(() => {
-    console.log("device: ", device);
+    if (device === Screen.None) return;
     if (boxRef.current) {
       const distanceX =
-        device === "Mobile" ? 80 : device === "Tablet" ? 150 : 250;
+        device === Screen.Mobile ? 80 : device === Screen.Tablet ? 150 : 250;
       const distanceY =
-        device === "Mobile" ? 20 : device === "Tablet" ? 50 : 100;
+        device === Screen.Mobile ? 20 : device === Screen.Tablet ? 50 : 100;
       gsap.fromTo(
         imageRefs.current[0],
         {
           x: 0,
           y:
             -distanceY +
-            (device === "Mobile" ? 10 : device === "Tablet" ? 70 : 100),
+            (device === Screen.Mobile
+              ? 10
+              : device === Screen.Tablet
+              ? 70
+              : 100),
         },
         {
           x: -distanceX, // Move left
@@ -83,7 +92,7 @@ export default function BoxWhatIs() {
         imageRefs.current[2],
         {
           x: 0,
-          y: distanceY - (device === "Mobile" ? 10 : 50),
+          y: distanceY - (device === Screen.Mobile ? 10 : 50),
         },
         {
           x: distanceX, // Move right
@@ -101,12 +110,27 @@ export default function BoxWhatIs() {
       gsap.fromTo(
         imageRefs.current[4],
         {
-          x: device === "Mobile" ? 50 : device === "Tablet" ? 100 : 100,
-          y: device === "Mobile" ? 40 : device === "Tablet" ? 10 : -0,
+          x:
+            device === Screen.Mobile
+              ? 50
+              : device === Screen.Tablet
+              ? 100
+              : 100,
+          y: device === Screen.Mobile ? 40 : device === Screen.Tablet ? 10 : -0,
         },
         {
-          x: device === "Mobile" ? 180 : device === "Tablet" ? 280 : 500, // Move right
-          y: device === "Mobile" ? 10 : device === "Tablet" ? -0 : -150,
+          x:
+            device === Screen.Mobile
+              ? 180
+              : device === Screen.Tablet
+              ? 280
+              : 500, // Move right
+          y:
+            device === Screen.Mobile
+              ? 10
+              : device === Screen.Tablet
+              ? -0
+              : -150,
           delay: 0.5,
           scrollTrigger: {
             trigger: boxRef.current, // Trigger based on boxRef
@@ -119,13 +143,28 @@ export default function BoxWhatIs() {
       gsap.fromTo(
         imageRefs.current[3],
         {
-          x: device === "Mobile" ? -50 : device === "Tablet" ? -80 : -100,
-          y: device === "Mobile" ? 150 : 100,
-          // y: distanceY - (device === "Mobile" ? 10 : 50),
+          x:
+            device === Screen.Mobile
+              ? -50
+              : device === Screen.Tablet
+              ? -80
+              : -100,
+          y: device === Screen.Mobile ? 150 : 100,
+          // y: distanceY - (device === Screen.Mobile ? 10 : 50),
         },
         {
-          x: device === "Mobile" ? -150 : device === "Tablet" ? -280 : -420, // Move right
-          y: device === "Mobile" ? 140 : device === "Tablet" ? 250 : 250,
+          x:
+            device === Screen.Mobile
+              ? -150
+              : device === Screen.Tablet
+              ? -280
+              : -420, // Move right
+          y:
+            device === Screen.Mobile
+              ? 140
+              : device === Screen.Tablet
+              ? 250
+              : 250,
           // y: -distanceY,
           delay: 0.5, // 0.5-second delay before starting the animation
           // ease: "power2.inOut", // Smooth easing
