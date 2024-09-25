@@ -112,11 +112,11 @@ export default function BoxWhatIs() {
         {
           x:
             device === Screen.Mobile
-              ? 50
+              ? 55
               : device === Screen.Tablet
               ? 100
               : 100,
-          y: device === Screen.Mobile ? 40 : device === Screen.Tablet ? 10 : -0,
+          y: device === Screen.Mobile ? 50 : device === Screen.Tablet ? 20 : -0,
         },
         {
           x:
@@ -126,11 +126,7 @@ export default function BoxWhatIs() {
               ? 280
               : 500, // Move right
           y:
-            device === Screen.Mobile
-              ? 10
-              : device === Screen.Tablet
-              ? -0
-              : -150,
+            device === Screen.Mobile ? 5 : device === Screen.Tablet ? -0 : -150,
           delay: 0.5,
           scrollTrigger: {
             trigger: boxRef.current, // Trigger based on boxRef
@@ -149,7 +145,12 @@ export default function BoxWhatIs() {
               : device === Screen.Tablet
               ? -80
               : -100,
-          y: device === Screen.Mobile ? 150 : 100,
+          y:
+            device === Screen.Mobile
+              ? 100
+              : device === Screen.Tablet
+              ? 150
+              : 100,
           // y: distanceY - (device === Screen.Mobile ? 10 : 50),
         },
         {
@@ -161,10 +162,10 @@ export default function BoxWhatIs() {
               : -420, // Move right
           y:
             device === Screen.Mobile
-              ? 140
+              ? 130
               : device === Screen.Tablet
               ? 250
-              : 250,
+              : 235,
           // y: -distanceY,
           delay: 0.5, // 0.5-second delay before starting the animation
           // ease: "power2.inOut", // Smooth easing
