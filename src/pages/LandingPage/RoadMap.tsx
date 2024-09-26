@@ -69,7 +69,7 @@ const Card = ({
       <div>
         <img
           src={StartGreenImg}
-          className="w-26 h-26 absolute left-[-50px] block md:hidden"
+          className="w-26 h-26 absolute left-[-40px] block md:hidden"
         />
       </div>
       <img
@@ -119,7 +119,7 @@ export default function RoadMap() {
     <div className="mx-auto flex flex-col items-center mt-[120px] md:mt-24 relative">
       <div
         style={{
-          left: "calc(50% - 182px)",
+          left: "calc(50% - 172px)",
         }}
         className="absolute w-[2px] h-full top-0 bottom-0 bg-primary md:hidden"
       ></div>

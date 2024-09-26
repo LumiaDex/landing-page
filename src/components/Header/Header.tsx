@@ -24,7 +24,7 @@ export default function Header() {
     setActive((pre) => !pre);
   };
   return (
-    <div className="h-14 lg:overflow-hidden relative lg:h-[84px] w-full lg:bg-white bg-[#262B29] lg:bg-opacity-10 flex flex-row justify-between items-center px-8 z-[1000]">
+    <div className="h-14 lg:overflow-hidden relative lg:h-[84px] w-full lg:bg-white bg-[#262B29] lg:bg-opacity-10 flex flex-row justify-between items-center px-5 md:px-8 z-[1000]">
       <div
         style={{
           background: "rgba(37, 114, 84, 0.2)",

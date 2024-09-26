@@ -55,7 +55,7 @@ export default function Intro() {
         className="h-[370px] sm:h-[500px] md:h-full object-cover absolute bottom-[-40px] md:bottom-[-200px] left-[15%] md:left-1/4 z-0"
         alt=""
       />
-      <div className="max-w-[1440px] md:top-[45%] z-20 md:-translate-y-1/2 relative md:px-16 px-4 my-auto mx-auto">
+      <div className="max-w-[1440px] md:top-[45%] z-20 md:-translate-y-1/2 relative md:px-16 px-5 my-auto mx-auto">
         <div className="w-full max-w-[567px]">
           <h1 className="text-[40px] leading-[1.3em] font-normal text-white md:text-[64px] md:leading-[84px]">
             Invest in DeFi, <br />

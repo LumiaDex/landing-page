@@ -19,7 +19,7 @@ export default function WhatIs() {
   ];
 
   return (
-    <div className="max-w-[1440px] md:px-16 px-4 mx-auto pt-[120px] w-full">
+    <div className="max-w-[1440px] md:px-16 px-5 mx-auto pt-[120px] w-full">
       <div className="text-lg md:text-2xl font-normal text-primary">
         What is Cassus?
       </div>

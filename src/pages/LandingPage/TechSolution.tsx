@@ -52,7 +52,7 @@ export default function TechSolution() {
     },
   ];
   return (
-    <div className="max-w-[1440px] md:px-16 px-4 mx-auto pt-10 md:pt-20 w-full relative">
+    <div className="max-w-[1440px] md:px-16 px-5 mx-auto pt-10 md:pt-20 w-full relative">
       <div
         style={{
           background: `radial-gradient(50% 50% at 50% 50%, rgba(60, 64, 61, 0.5) 0%, rgba(11, 11, 11, 0) 100%)`,
