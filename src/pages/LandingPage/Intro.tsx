@@ -26,14 +26,14 @@ export default function Intro() {
   return (
     <div
       ref={bgRef}
-      className=" pt-16 overflow-hidden md:pt-0 relative md:h-[937px] h-[800px] bg-cover bg-center bg-no-repeat"
+      className=" pt-16 overflow-hidden md:pt-0 relative h-[700px] md:h-[100svh] bg-cover bg-center bg-no-repeat"
     >
       <video
         autoPlay
         muted
         playsInline
         loop
-        className=" h-2/3 md:h-full object-cover absolute bottom-0 md:left-1/4 z-0"
+        className="h-[370px] sm:h-[500px] md:h-full object-cover absolute bottom-[-40px] md:bottom-0 left-[15%] md:left-1/4 z-0"
       >
         <source src={BgWebm} type="video/webm" />
         <source src={BgMP4} type="video/mp4" />

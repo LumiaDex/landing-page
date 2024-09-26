@@ -7,6 +7,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
+import { cn } from "@/utils/cn";
 import { useEffect, useRef, useState } from "react";
 import WhatIs from "./WhatIs";
 
@@ -180,10 +181,21 @@ export default function BoxWhatIs() {
     }
   }, [device]);
   return (
-    <div ref={boxRef} className="box-container overflow-hidden relative pb-20">
-      <WhatIs />
-      <div className="relative w-full max-w-[1440px] mx-auto">
-        <img className="w-auto ml-auto mt-6 pt-10 md:pt-0" src={CassusBgImg} />
+    <div
+      ref={boxRef}
+      className="box-container overflow-hidden relative pb-20 max-w-[1440px] mx-auto"
+    >
+      <div className="md:absolute relative z-10 top-0 left-0">
+        <WhatIs />
+      </div>
+      <div className="relative  w-full md:mt-[220px]">
+        <img
+          className={cn(
+            "min-w-[120%] relative left-[-10%] md:left-auto md:min-w-fit h-auto ml-auto mt-6 pt-5 md:pt-0",
+            device === Screen.Mobile && ""
+          )}
+          src={CassusBgImg}
+        />
 
         <div className="top-5 md:top-[80px] lg:top-[120px] items-center left-1/2 md:left-[55%]  absolute -translate-x-1/2">
           <img

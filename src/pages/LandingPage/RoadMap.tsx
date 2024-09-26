@@ -94,7 +94,7 @@ const Card = ({
 };
 export default function RoadMap() {
   return (
-    <div className="mx-auto flex flex-col items-center mt-24 relative">
+    <div className="mx-auto flex flex-col items-center mt-[120px] md:mt-24 relative">
       <div
         style={{
           left: "calc(50% - 182px)",

@@ -24,16 +24,16 @@ export default function Header() {
     setActive((pre) => !pre);
   };
   return (
-    <div className="h-14 md:h-[84px] w-full bg-white bg-opacity-10 flex flex-row justify-between items-center px-6 z-[1000]">
-      <div className="md:basis-1/5">
+    <div className="h-14 lg:h-[84px] w-full bg-white bg-opacity-10 flex flex-row justify-between items-center px-6 z-[1000]">
+      <div className="lg:basis-1/5">
         <img
           onClick={() => navigate(ROUTES.LANDING_PAGE)}
           src={LogoImg}
-          className="w-[109px] h-auto cursor-pointer md:w-[186px]"
+          className="w-[109px] h-auto cursor-pointer lg:w-[186px]"
         />
       </div>
-      <div className="md:basis-2/5">
-        <div className="hidden md:flex items-center gap-4">
+      <div className="lg:basis-3/5">
+        <div className="hidden lg:flex items-center gap-4">
           {["About Us", "Features", "CASSUS Token", "Airdrop Program"].map(
             (element) => (
               <div className="text-lg font-normal text-white" key={element}>
@@ -43,12 +43,12 @@ export default function Header() {
           )}
         </div>
       </div>
-      <div className="md:basis-2/5">
+      <div className=" lg:basis-1/5">
         <button
           onClick={() => {
             window.open("https://app.cassus.org/");
           }}
-          className="bg-primary hidden md:flex h-12 rounded-lg items-center gap-2 ml-auto px-3"
+          className="bg-primary hidden lg:flex h-12 rounded-lg items-center gap-2 ml-auto px-3"
         >
           <span className="text-lg font-medium text-black">Enter Cassus</span>
           <ArrowIcon />
@@ -56,7 +56,7 @@ export default function Header() {
       </div>
       <div
         onClick={handleClick}
-        className="md:hidden relative flex items-center gap-1"
+        className="lg:hidden relative flex items-center gap-1"
       >
         <span className="text-primary font-bold text-xl tracking-[-0.04em] uppercase">
           Menu

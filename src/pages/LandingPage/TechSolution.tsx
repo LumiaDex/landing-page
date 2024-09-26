@@ -64,7 +64,10 @@ export default function TechSolution() {
                   "flex items-center justify-center flex-col gap-4 md:mt-0 mt-10"
                 )}
               >
-                <img src={image} className="md:w-[200px] w-[120px] h-auto" />
+                <img
+                  src={image}
+                  className="md:w-[200px] mx-0 sm:mx-10 sm:w-[150px] w-[120px] h-auto"
+                />
                 <div className="md:text-2xl text-base max-w-[160px] md:max-w-[288px] font-light text-center">
                   {title}
                 </div>

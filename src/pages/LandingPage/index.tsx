@@ -32,14 +32,14 @@ export default function LandingPage() {
   }, []);
 
   useEffect(() => {
-    gsap.to(divRef.current, {
-      yPercent: 170,
-      ease: "none",
-      scrollTrigger: {
-        trigger: parallaxRef.current,
-        scrub: true,
-      },
-    });
+    // gsap.to(divRef.current, {
+    //   yPercent: 170,
+    //   ease: "none",
+    //   scrollTrigger: {
+    //     trigger: parallaxRef.current,
+    //     scrub: true,
+    //   },
+    // });
 
     window.addEventListener("scroll", () => {
       if (divRef.current?.clientHeight && window.scrollY) {
@@ -78,40 +78,7 @@ export default function LandingPage() {
               ref={textRef}
               className="justify-between items-center h-[92px] px-12 w-full flex gap-20"
             >
-              {[
-                "Powered by Lumia",
-                "Powered by Lumia",
-                "Powered by Lumia",
-                "Powered by Lumia",
-                "Powered by Lumia",
-                "Powered by Lumia",
-                "Powered by Lumia",
-                "Powered by Lumia",
-                "Powered by Lumia",
-                "Powered by Lumia",
-                "Powered by Lumia",
-                "Powered by Lumia",
-                "Powered by Lumia",
-                "Powered by Lumia",
-                "Powered by Lumia",
-                "Powered by Lumia",
-                "Powered by Lumia",
-                "Powered by Lumia",
-                "Powered by Lumia",
-                "Powered by Lumia",
-                "Powered by Lumia",
-                "Powered by Lumia",
-                "Powered by Lumia",
-                "Powered by Lumia",
-                "Powered by Lumia",
-                "Powered by Lumia",
-                "Powered by Lumia",
-                "Powered by Lumia",
-                "Powered by Lumia",
-                "Powered by Lumia",
-                "Powered by Lumia",
-                "Powered by Lumia",
-              ].map((element, idx) => (
+              {new Array(50).fill("Powered by Lumia").map((element, idx) => (
                 <>
                   <div
                     key={`running-${idx}`}

@@ -3,15 +3,9 @@ import FooterSession1Img from "@/assets/images/footer-background.png";
 
 export default function Footer() {
   return (
-    <div className="w-full  h-[512px] md:h-[673px] relative">
-      <img
-        className="w-full absolute hidden md:block"
-        src={FooterSession1Img}
-      />
-      <img
-        className="w-full absolute block md:hidden"
-        src={FooterSession1MbImg}
-      />
+    <div className="w-full  relative">
+      <img className="w-full  hidden md:block" src={FooterSession1Img} />
+      <img className="w-full  block md:hidden" src={FooterSession1MbImg} />
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer group flex items-center justify-center flex-col"
         onClick={() => {

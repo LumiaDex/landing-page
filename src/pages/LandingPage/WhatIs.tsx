@@ -19,7 +19,7 @@ export default function WhatIs() {
   ];
 
   return (
-    <div className="max-w-[1440px] md:px-16 px-4 mx-auto pt-[160px] md:pt-24 w-full">
+    <div className="max-w-[1440px] md:px-16 px-4 mx-auto pt-[120px] md:pt-24 w-full">
       <div className="text-lg md:text-2xl font-normal text-primary">
         What is Cassus?
       </div>
@@ -32,7 +32,7 @@ export default function WhatIs() {
             unconventional assets
           </div>
         </div>
-        <div className="md:mt-6">
+        <div className="md:mt-6 w-full">
           <div className=" text-base md:text-xl max-w-[467px] font-light leading-[1.6em]">
             Cassus is the AI-backed, cross-chain, <br /> decentralized borrowing
             &  lending protocol for NFTs, LPs & RWAs.
