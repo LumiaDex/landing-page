@@ -36,14 +36,14 @@ export default function Header() {
         <img
           onClick={() => navigate(ROUTES.LANDING_PAGE)}
           src={LogoImg}
-          className="w-[109px] h-auto cursor-pointer lg:w-[145px]"
+          className="w-[109px] relative z-20 h-auto cursor-pointer lg:w-[145px]"
         />
-        <div className="">
+        <div className="relative z-20">
           <div className="hidden lg:flex items-center gap-4 ml-24">
             {["About Us", "Features", "CASSUS Token", "Airdrop Program"].map(
               (element) => (
                 <div
-                  className="text-lg font-normal text-white w-max"
+                  className="text-lg font-normal text-white w-max cursor-pointer"
                   key={element}
                 >
                   {element}
