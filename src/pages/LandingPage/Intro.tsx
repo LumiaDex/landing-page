@@ -1,7 +1,4 @@
-import {
-  default as BgMP4,
-  default as BgWebm,
-} from "@/assets/video/steel-v2.webm";
+import { default as BgWebm } from "@/assets/video/steel.gif";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
@@ -35,7 +32,7 @@ export default function Intro() {
         }}
         className="w-[900px] left-[-20%] h-[222px] absolute z-10 rotate-[-23deg]"
       ></div>
-      <video
+      {/* <video
         autoPlay
         muted
         playsInline
@@ -45,7 +42,12 @@ export default function Intro() {
         <source src={BgWebm} type="video/webm" />
         <source src={BgMP4} type="video/mp4" />
         Your browser does not support the video tag.
-      </video>
+      </video> */}
+      <img
+        src={BgWebm}
+        className="h-[370px] sm:h-[500px] md:h-full object-cover absolute bottom-[-40px] md:bottom-[-200px] left-[15%] md:left-1/4 z-0"
+        alt=""
+      />
       <div className="max-w-[1440px] md:top-[45%] z-20 md:-translate-y-1/2 relative md:px-16 px-4 my-auto mx-auto">
         <div className="w-full max-w-[567px]">
           <h1 className="text-[40px] leading-[1.3em] font-normal text-white md:text-[64px] md:leading-[84px]">

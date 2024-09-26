@@ -24,7 +24,7 @@ export default function Header() {
     setActive((pre) => !pre);
   };
   return (
-    <div className="h-14 overflow-hidden relative lg:h-[84px] w-full lg:bg-white bg-[#262B29] lg:bg-opacity-10 flex flex-row justify-between items-center px-6 z-[1000]">
+    <div className="h-14 lg:overflow-hidden relative lg:h-[84px] w-full lg:bg-white bg-[#262B29] lg:bg-opacity-10 flex flex-row justify-between items-center px-6 z-[1000]">
       <div
         style={{
           background: "rgba(37, 114, 84, 0.2)",
@@ -67,7 +67,7 @@ export default function Header() {
       </div>
       <div
         onClick={handleClick}
-        className="lg:hidden relative flex items-center gap-1.5"
+        className="lg:hidden relative z-[20] flex items-center gap-1.5"
       >
         <span className="text-primary font-bold text-xl tracking-[-0.04em] uppercase">
           Menu
