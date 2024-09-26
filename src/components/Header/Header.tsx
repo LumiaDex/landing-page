@@ -39,7 +39,7 @@ export default function Header() {
           className="w-[109px] relative z-20 h-auto cursor-pointer lg:w-[145px]"
         />
         <div className="relative z-20">
-          <div className="hidden lg:flex items-center gap-4 ml-24">
+          <div className="hidden lg:flex items-center gap-6 ml-24">
             {["About Us", "Features", "CASSUS Token", "Airdrop Program"].map(
               (element) => (
                 <div
