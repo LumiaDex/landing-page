@@ -24,26 +24,37 @@ export default function Header() {
     setActive((pre) => !pre);
   };
   return (
-    <div className="h-14 lg:h-[84px] w-full bg-white bg-opacity-10 flex flex-row justify-between items-center px-6 z-[1000]">
-      <div className="lg:basis-1/5">
+    <div className="h-14 overflow-hidden relative lg:h-[84px] w-full lg:bg-white bg-[#262B29] lg:bg-opacity-10 flex flex-row justify-between items-center px-6 z-[1000]">
+      <div
+        style={{
+          background: "rgba(37, 114, 84, 0.2)",
+          filter: "blur(250px)",
+        }}
+        className="w-[900px] hidden lg:block left-[-20%] h-[222px] absolute z-10 rotate-[-23deg]"
+      ></div>
+      <div className="lg:basis-2/5 flex">
         <img
           onClick={() => navigate(ROUTES.LANDING_PAGE)}
           src={LogoImg}
-          className="w-[109px] h-auto cursor-pointer lg:w-[186px]"
+          className="w-[109px] h-auto cursor-pointer lg:w-[145px]"
         />
-      </div>
-      <div className="lg:basis-3/5">
-        <div className="hidden lg:flex items-center gap-4">
-          {["About Us", "Features", "CASSUS Token", "Airdrop Program"].map(
-            (element) => (
-              <div className="text-lg font-normal text-white" key={element}>
-                {element}
-              </div>
-            )
-          )}
+        <div className="">
+          <div className="hidden lg:flex items-center gap-4 ml-24">
+            {["About Us", "Features", "CASSUS Token", "Airdrop Program"].map(
+              (element) => (
+                <div
+                  className="text-lg font-normal text-white w-max"
+                  key={element}
+                >
+                  {element}
+                </div>
+              )
+            )}
+          </div>
         </div>
       </div>
-      <div className=" lg:basis-1/5">
+
+      <div className=" lg:basis-3/5">
         <button
           onClick={() => {
             window.open("https://app.cassus.org/");
@@ -56,7 +67,7 @@ export default function Header() {
       </div>
       <div
         onClick={handleClick}
-        className="lg:hidden relative flex items-center gap-1"
+        className="lg:hidden relative flex items-center gap-1.5"
       >
         <span className="text-primary font-bold text-xl tracking-[-0.04em] uppercase">
           Menu

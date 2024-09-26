@@ -28,24 +28,31 @@ export default function Intro() {
       ref={bgRef}
       className=" pt-16 overflow-hidden md:pt-0 relative h-[700px] md:h-[100svh] bg-cover bg-center bg-no-repeat"
     >
+      <div
+        style={{
+          background: "rgba(37, 114, 84, 0.5)",
+          filter: "blur(250px)",
+        }}
+        className="w-[900px] left-[-20%] h-[222px] absolute z-10 rotate-[-23deg]"
+      ></div>
       <video
         autoPlay
         muted
         playsInline
         loop
-        className="h-[370px] sm:h-[500px] md:h-full object-cover absolute bottom-[-40px] md:bottom-0 left-[15%] md:left-1/4 z-0"
+        className="h-[370px] sm:h-[500px] md:h-full object-cover absolute bottom-[-40px] md:bottom-[-200px] left-[15%] md:left-1/4 z-0"
       >
         <source src={BgWebm} type="video/webm" />
         <source src={BgMP4} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      <div className="max-w-[1440px] md:top-1/2 md:-translate-y-1/2 relative md:px-16 px-4 my-auto mx-auto">
+      <div className="max-w-[1440px] md:top-[45%] z-20 md:-translate-y-1/2 relative md:px-16 px-4 my-auto mx-auto">
         <div className="w-full max-w-[567px]">
           <h1 className="text-[40px] leading-[1.3em] font-normal text-white md:text-[64px] md:leading-[84px]">
             Invest in DeFi, <br />
             redefine your yield
           </h1>
-          <div className="text-[#C0C0C0] md:text-white text-base md:text-xl leading-[32px] tracking-[0.02em] mt-3">
+          <div className="text-[#C0C0C0] md:text-[#C0C0C0] text-base md:text-lg leading-[32px] tracking-[0.02em] mt-3">
             A cross-chain borrowing and lending protocol for NFTs, liquidity
             positions, synthetic assets and real world assets.
           </div>
@@ -53,9 +60,9 @@ export default function Intro() {
             onClick={() => {
               window.open("https://app.cassus.org/");
             }}
-            className="bg-primary h-12 md:h-[64px] rounded-xl flex items-center gap-2 px-3 md:px-6 mt-10"
+            className="bg-primary h-12 md:h-[56px] rounded-xl flex items-center gap-2 px-3 md:px-6 mt-10"
           >
-            <span className="text-base md:text-xl font-medium text-black">
+            <span className="text-base md:text-lg font-medium text-black">
               Enter Cassus
             </span>
             <ArrowIcon />

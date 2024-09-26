@@ -19,23 +19,23 @@ export default function WhatIs() {
   ];
 
   return (
-    <div className="max-w-[1440px] md:px-16 px-4 mx-auto pt-[120px] md:pt-24 w-full">
+    <div className="max-w-[1440px] md:px-16 px-4 mx-auto pt-[120px] w-full">
       <div className="text-lg md:text-2xl font-normal text-primary">
         What is Cassus?
       </div>
       <div className="flex flex-col gap-3 mt-3 md:gap-0 w-full items-center md:items-start">
         <div className="">
-          <div className="md:text-[48px] text-[32px] font-normal md:leading-[1.4em] leading-[1.2em] text-white max-w-[688px]">
-            Innovate DeFi by <br className="md:hidden block" /> unlocking{" "}
-            <br className="hidden md:block" /> the value of
-            <br className="md:hidden block" /> both conventional and
-            unconventional assets
+          <div className="md:text-[48px] text-[28px] font-normal leading-[1.4em] text-white max-w-[688px]">
+            Innovate DeFi by unlocking <br className="hidden md:block" /> the
+            value of both conventional and unconventional assets
           </div>
         </div>
         <div className="md:mt-6 w-full">
-          <div className=" text-base md:text-xl max-w-[467px] font-light leading-[1.6em]">
-            Cassus is the AI-backed, cross-chain, <br /> decentralized borrowing
-            &  lending protocol for NFTs, LPs & RWAs.
+          <div className=" text-base md:text-xl max-w-[467px] font-light leading-[1.6em] tracking-[0.02em]">
+            Cassus is the AI-backed, cross-chain, decentralized{" "}
+            <br className="hidden md:block" /> borrowing &  lending protocol
+            <br className="block md:hidden" />
+            for NFTs, LPs & RWAs.
           </div>
         </div>
       </div>

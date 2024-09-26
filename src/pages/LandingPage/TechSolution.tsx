@@ -43,12 +43,29 @@ export default function TechSolution() {
       image: Tech2Img,
     },
     {
-      title: "RWA Collateral Support",
+      title: (
+        <>
+          RWA Collateral <br /> Support
+        </>
+      ),
       image: Tech3Img,
     },
   ];
   return (
-    <div className="max-w-[1440px] md:px-16 px-4 mx-auto pt-10 w-full">
+    <div className="max-w-[1440px] md:px-16 px-4 mx-auto pt-10 md:pt-20 w-full relative">
+      <div
+        style={{
+          background: `radial-gradient(50% 50% at 50% 50%, rgba(60, 64, 61, 0.5) 0%, rgba(11, 11, 11, 0) 100%)`,
+          transform: "rotate(-25.31deg)",
+        }}
+        className="w-[1000px] h-[600px] absolute rounded-full -top-[10%]"
+      ></div>
+      <div
+        style={{
+          background: `radial-gradient(50% 50% at 50% 50%, rgba(60, 64, 61, 0.5) 0%, rgba(11, 11, 11, 0) 100%)`,
+        }}
+        className="w-[1000px] h-[600px] absolute rounded-full -right-0 -bottom-1/3"
+      ></div>
       <fieldset className="border border-primary w-full pb-10  mx-auto rounded-[40px]">
         <legend className="md:mx-16 mx-4">
           <span className="text-primary md:text-[56px] text-[40px] font-normal px-5">
@@ -57,7 +74,7 @@ export default function TechSolution() {
         </legend>
 
         <div className="h-full w-full flex items-center justify-center">
-          <div className="flex flex-wrap justify-around md:justify-center md:gap-x-[100px] md:gap-y-20 ">
+          <div className="flex md:py-10 flex-wrap justify-around md:justify-center md:gap-x-[100px] md:gap-y-20 ">
             {items.map(({ title, image }) => (
               <div
                 className={cn(

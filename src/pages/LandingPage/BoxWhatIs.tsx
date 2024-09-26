@@ -108,6 +108,7 @@ export default function BoxWhatIs() {
           },
         }
       );
+
       gsap.fromTo(
         imageRefs.current[4],
         {
@@ -115,19 +116,20 @@ export default function BoxWhatIs() {
             device === Screen.Mobile
               ? 55
               : device === Screen.Tablet
-              ? 100
-              : 100,
-          y: device === Screen.Mobile ? 50 : device === Screen.Tablet ? 20 : -0,
+              ? 200
+              : 300,
+          y:
+            device === Screen.Mobile ? 50 : device === Screen.Tablet ? 30 : -60,
         },
         {
           x:
             device === Screen.Mobile
               ? 180
               : device === Screen.Tablet
-              ? 280
+              ? 320
               : 500, // Move right
           y:
-            device === Screen.Mobile ? 5 : device === Screen.Tablet ? -0 : -150,
+            device === Screen.Mobile ? 5 : device === Screen.Tablet ? 12 : -150,
           delay: 0.5,
           scrollTrigger: {
             trigger: boxRef.current, // Trigger based on boxRef
@@ -145,13 +147,13 @@ export default function BoxWhatIs() {
               ? -50
               : device === Screen.Tablet
               ? -80
-              : -100,
+              : -200,
           y:
             device === Screen.Mobile
               ? 100
               : device === Screen.Tablet
-              ? 150
-              : 100,
+              ? 200
+              : 220,
           // y: distanceY - (device === Screen.Mobile ? 10 : 50),
         },
         {
@@ -166,7 +168,7 @@ export default function BoxWhatIs() {
               ? 130
               : device === Screen.Tablet
               ? 250
-              : 235,
+              : 240,
           // y: -distanceY,
           delay: 0.5, // 0.5-second delay before starting the animation
           // ease: "power2.inOut", // Smooth easing
@@ -188,33 +190,33 @@ export default function BoxWhatIs() {
       <div className="md:absolute relative z-10 top-0 left-0">
         <WhatIs />
       </div>
-      <div className="relative  w-full md:mt-[220px]">
+      <div className="relative  w-full md:mt-[260px]">
         <img
           className={cn(
-            "min-w-[120%] relative left-[-10%] md:left-auto md:min-w-fit h-auto ml-auto mt-6 pt-5 md:pt-0",
+            "min-w-[120%] relative left-[-10%] md:left-auto md:min-w-[100px] h-auto ml-auto mt-6 pt-5 md:pt-0",
             device === Screen.Mobile && ""
           )}
           src={CassusBgImg}
         />
 
-        <div className="top-5 md:top-[80px] lg:top-[120px] items-center left-1/2 md:left-[55%]  absolute -translate-x-1/2">
+        <div className="top-5 md:top-[80px] lg:top-[100px] items-center left-1/2 md:left-[55%]  absolute -translate-x-1/2">
           <img
             ref={(el) => (imageRefs.current[0] = el)}
-            className=" mx-auto pl-5 md:pl-10 w-[140px] sm:w-[200px] md:w-[250px] lg:w-[307px] mt-6 relative "
+            className=" mx-auto pl-5 md:pl-10 w-[140px] sm:h-[350px] sm:w-auto md:h-[400px] md:w-auto lg:w-auto lg:h-[508px] mt-6 relative "
             src={Cassus01Img}
           />
         </div>
-        <div className="top-5 md:top-[80px] lg:top-[120px] items-center left-1/2 md:left-[55%]  absolute -translate-x-1/2">
+        <div className="top-5 md:top-[80px] lg:top-[90px] items-center left-1/2 md:left-[55%]  absolute -translate-x-1/2">
           <img
             ref={(el) => (imageRefs.current[1] = el)}
-            className=" mx-auto pl-5 md:pl-10 w-[140px] sm:w-[200px] md:w-[250px] lg:w-[307px] mt-6 relative "
+            className=" mx-auto pl-5 md:pl-10 w-[140px] sm:h-[350px] sm:w-auto md:h-[400px] md:w-auto lg:w-auto lg:h-[508px] mt-6 relative "
             src={Cassus02Img}
           />
         </div>
-        <div className="top-5 md:top-[80px] lg:top-[120px] items-center left-1/2 md:left-[55%]  absolute -translate-x-1/2">
+        <div className="top-5 md:top-[80px] lg:top-[80px] items-center left-1/2 md:left-[55%]  absolute -translate-x-1/2">
           <img
             ref={(el) => (imageRefs.current[2] = el)}
-            className=" mx-auto pl-5 md:pl-10 w-[140px] sm:w-[200px] md:w-[250px] lg:w-[307px] mt-6 relative "
+            className=" mx-auto pl-5 md:pl-10 w-[140px] sm:h-[350px] sm:w-auto md:h-[400px] md:w-auto lg:w-auto lg:h-[508px] mt-6 relative "
             src={Cassus03Img}
           />
         </div>

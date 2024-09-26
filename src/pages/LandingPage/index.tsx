@@ -32,14 +32,14 @@ export default function LandingPage() {
   }, []);
 
   useEffect(() => {
-    // gsap.to(divRef.current, {
-    //   yPercent: 170,
-    //   ease: "none",
-    //   scrollTrigger: {
-    //     trigger: parallaxRef.current,
-    //     scrub: true,
-    //   },
-    // });
+    gsap.to(divRef.current, {
+      yPercent: 170,
+      ease: "none",
+      scrollTrigger: {
+        trigger: parallaxRef.current,
+        scrub: true,
+      },
+    });
 
     window.addEventListener("scroll", () => {
       if (divRef.current?.clientHeight && window.scrollY) {
@@ -65,13 +65,13 @@ export default function LandingPage() {
         </div>
         <div
           className={cn(
-            "md:h-[104px] h-[84px] w-full bg-white bg-opacity-10 bg-left-bottom md:bg-auto backdrop-blur-[30px]",
+            "md:h-[104px] h-[84px] w-full md:bg-white bg-opacity-10 bg-left-bottom md:bg-auto backdrop-blur-[30px]",
             "flex items-center justify-center relative overflow-hidden"
           )}
         >
           <div
             ref={percentRef}
-            className="w-0 h-[1px] absolute top-0 left-0 bg-primary"
+            className="w-0 h-[1px] absolute top-0 left-0 bg-[#03d182c9]"
           ></div>
           <div className="absolute top-1/2 -translate-y-1/2 left-0  right-0">
             <div
@@ -82,10 +82,10 @@ export default function LandingPage() {
                 <>
                   <div
                     key={`running-${idx}`}
-                    className="text-[#03d18250] text-xl min-w-max relative font-normal md:tracking-[0.4em]"
+                    className="text-[#03D181] text-xl min-w-max relative font-normal md:tracking-[0.4em]"
                   >
                     {element}
-                    <div className="h-6 absolute -left-10 top-1/2 -translate-y-1/2 w-[2px] bg-[#03d18250]" />
+                    <div className="h-6 absolute -left-10 top-1/2 -translate-y-1/2 w-[2px] bg-[#03D181]" />
                   </div>
                 </>
               ))}
@@ -96,7 +96,7 @@ export default function LandingPage() {
           style={{
             backgroundImage: `url(${BgImg})`,
           }}
-          className="min-h-[100vh] relative bg-cover bg-center bg-no-repeat md:pb-20 pb-10"
+          className="min-h-[100vh] relative bg-top bg-cover bg-center bg-no-repeat md:pb-20 pb-10"
         >
           <BoxWhatIs />
           <TechSolution />
