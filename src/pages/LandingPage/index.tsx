@@ -65,7 +65,7 @@ export default function LandingPage() {
         </div>
         <div
           className={cn(
-            "md:h-[104px] h-[84px] w-full md:bg-white bg-opacity-10 bg-left-bottom md:bg-auto backdrop-blur-[30px]",
+            "md:h-[104px] h-[84px] w-full md:bg-white md:bg-opacity-10 bg-left-bottom md:bg-auto backdrop-blur-[30px]",
             "flex items-center justify-center relative overflow-hidden"
           )}
         >
