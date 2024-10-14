@@ -27,7 +27,7 @@ export default {
         container: '1440px',
       },
       colors: {
-        primary: '#04D182',
+        primary: '#03D181',
       }
     },
   },

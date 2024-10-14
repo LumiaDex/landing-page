@@ -25,20 +25,20 @@ export default function WhatIs() {
       </div>
       <div className="flex flex-col gap-3 mt-3 md:gap-0 w-full items-center md:items-start">
         <div className="">
-          <div className="md:text-[48px] text-[28px] font-normal leading-[1.4em] text-white max-w-[688px]">
-            Innovate DeFi by unlocking <br className="hidden md:block" /> the
-            value of both conventional and unconventional assets
+          <div className="md:text-[40px] text-[28px] font-normal leading-[1.4em] text-white max-w-[688px]">
+            Ethera is a LRT platform that abstracts the technical, financial,{" "}
+            <br />
+            and risk management barriers
           </div>
         </div>
         <div className="md:mt-6 w-full">
-          <div className=" text-base md:text-xl max-w-[467px] font-light leading-[1.6em] tracking-[0.02em]">
+          <div className=" text-base md:text-lg max-w-[467px] font-light leading-[1.6em] tracking-[0.02em]">
             {/* Cassus is the AI-backed, cross-chain, decentralized{" "}
             <br className="hidden md:block" /> borrowing &  lending protocol
             <br className="block md:hidden" />
             for NFTs, LPs & RWAs. */}
-            Ethera is a LRT platform that abstracts the technical, financial,
-            and risk management barriers for market participants, enabling
-            easier access to the emerging restaking primitive.
+            For market participants, enabling easier access to the emerging
+            restaking primitive.
           </div>
         </div>
       </div>

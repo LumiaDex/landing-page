@@ -35,24 +35,24 @@ export default function TechSolution() {
     {
       title: "Simple Profit",
       description: "Maximize your assets through a broader range of activities",
-      image: Tech4Img,
+      image: Tech2Img,
     },
     {
       title: "Compounded Rewards",
       description: "Expand earning rewards by staking in different protocols",
-      image: Tech5Img,
+      image: Tech3Img,
     },
     {
       title: "Risk/Reward Management",
       description:
         "Customize your restaking strategies by selecting one or more networks to secure and earn yield",
-      image: Tech2Img,
+      image: Tech4Img,
     },
     {
       title: "Enhance security",
       description:
         "Leverage the security provided by Ethereum’s validator network",
-      image: Tech3Img,
+      image: Tech5Img,
     },
   ];
   return (
@@ -70,29 +70,27 @@ export default function TechSolution() {
         }}
         className="w-[1000px] h-[600px] absolute rounded-full -right-0 -bottom-1/3"
       ></div>
-      <fieldset className="border border-primary w-full pb-10  mx-auto rounded-[40px]">
-        <legend className="md:mx-16 mx-4">
-          <span className="text-primary md:text-[56px] text-[40px] font-normal px-5">
-            Tech Solution
+      <fieldset className=" w-full pb-10  mx-auto rounded-[40px]">
+        <legend className="">
+          <span className="text-primary md:text-[56px] text-[40px] font-normal">
+            The Power Of Liquid Restaking
           </span>
         </legend>
 
         <div className="h-full w-full flex items-center justify-center">
-          <div className="flex md:py-10 flex-wrap justify-around md:justify-center md:gap-x-[100px] md:gap-y-20 ">
+          <div className="flex md:py-10 flex-wrap justify-around md:justify-center md:gap-x-[20px] md:gap-y-4 ">
             {items.map(({ title, image, description }) => (
               <div
+                key={title}
                 className={cn(
-                  "flex items-center justify-center flex-col gap-4 md:mt-0 mt-10"
+                  "flex items-center justify-start flex-col p-6 gap-4 md:mt-0 mt-10 border border-[#03D181] border-opacity-40 md:h-[404px] md:w-[411px] rounded-3xl"
                 )}
               >
-                <img
-                  src={image}
-                  className="md:w-[200px] mx-0 sm:mx-10 sm:w-[150px] w-[120px] h-auto"
-                />
-                <div className="md:text-2xl text-base max-w-[160px] md:max-w-[288px] font-light text-center">
+                <img src={image} className=" mx-0 sm:mx-10 w-auto h-[200px]" />
+                <div className="md:text-2xl text-xl max-w-[363px] font-light text-center">
                   {title}
                 </div>
-                <div className="md:text-md text-sm max-w-[288px] font-light text-center text-gray-400">
+                <div className="md:text-md text-md max-w-[363px] font-light text-center ">
                   {description}
                 </div>
               </div>

@@ -57,7 +57,7 @@ export default function Header() {
       <div className=" lg:basis-3/5">
         <button
           onClick={() => {
-            window.open("https://app.cassus.org/");
+            window.open("https://app.reyield.xyz/restake");
           }}
           className="bg-primary hidden lg:flex h-12 rounded-lg items-center gap-2 ml-auto px-3"
         >
@@ -94,7 +94,7 @@ export default function Header() {
 
               <button
                 onClick={() => {
-                  window.open("https://app.cassus.org/");
+                  window.open("https://app.reyield.xyz/restake");
                 }}
                 className="bg-primary w-fit flex h-12 rounded-lg items-center gap-2 px-3"
               >

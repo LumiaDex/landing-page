@@ -9,7 +9,7 @@ export default function Footer() {
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer group flex items-center justify-center flex-col"
         onClick={() => {
-          window.open("https://app.cassus.org/");
+          window.open("https://app.reyield.xyz/restake");
         }}
       >
         <div className="lg:text-[56px] leading-[48px] md:text-[56px] w-full md:w-max text-[40px] font-normal text-center group-hover:text-primary transition-all duration-300">

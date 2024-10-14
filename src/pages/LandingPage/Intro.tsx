@@ -56,10 +56,11 @@ export default function Intro() {
         alt=""
       />
       <div className="max-w-[1440px] md:top-[45%] z-20 md:-translate-y-1/2 relative md:px-16 px-5 my-auto mx-auto">
-        <div className="w-full max-w-[567px]">
-          <h1 className="text-[40px] leading-[1.3em] font-normal text-white md:text-[64px] md:leading-[84px]">
-            Restaking: <br />
-            More Rewards, More Security,
+        <div className="w-full max-w-[700px]">
+          <h1 className="text-[40px] leading-[1.3em] font-normal text-white md:text-[56px] md:leading-[72px]">
+            Restaking: More
+            <br />
+            Rewards, More Security
           </h1>
           <div className="text-[#C0C0C0] md:text-[#C0C0C0] text-base md:text-lg leading-[32px] tracking-[0.02em] mt-3">
             A restaking platform to maximize profits & receive dual rewards from
@@ -67,7 +68,7 @@ export default function Intro() {
           </div>
           <button
             onClick={() => {
-              window.open("https://app.cassus.org/");
+              window.open("https://app.reyield.xyz/restake");
             }}
             className="bg-primary h-12 md:h-[56px] rounded-xl flex items-center gap-2 px-3 md:px-6 mt-10"
           >
