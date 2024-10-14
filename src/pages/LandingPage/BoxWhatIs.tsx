@@ -7,6 +7,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
+import Tooltip from "@/components/Tooltip";
 import { cn } from "@/utils/cn";
 import { useEffect, useRef, useState } from "react";
 import WhatIs from "./WhatIs";
@@ -19,7 +20,7 @@ enum Screen {
 }
 
 export default function BoxWhatIs() {
-  const imageRefs = useRef<(HTMLImageElement | null)[]>([]);
+  const imageRefs = useRef<(HTMLDivElement | null)[]>([]);
   const boxRef = useRef<HTMLDivElement>(null);
 
   const breakpoints = {
@@ -200,36 +201,76 @@ export default function BoxWhatIs() {
         />
 
         <div className="top-5 md:top-[80px] lg:top-[100px] items-center left-1/2 md:left-[55%]  absolute -translate-x-1/2">
-          <img
-            ref={(el) => (imageRefs.current[0] = el)}
-            className=" mx-auto pl-5 md:pl-10 w-[140px] sm:h-[350px] sm:w-auto md:h-[400px] md:w-auto lg:w-auto lg:h-[508px] mt-6 relative "
-            src={Cassus01Img}
-          />
+          <div
+            className="mx-auto pl-5 md:pl-10 w-[140px] sm:h-[350px] sm:w-auto md:h-[400px] md:w-auto lg:w-auto lg:h-[508px] mt-6 relative"
+            ref={el => (imageRefs.current[0] = el)}
+          >
+            <img className="w-full h-full" src={Cassus01Img} />
+            <Tooltip
+              trigger={
+                <div className="text-xs md:text-lg absolute z-20 cursor-pointer top-[30px] md:top-[50px] left-[40px] md:left-[70px] translate-x-[-50%] bg-black text-primary px-2 py-1 rounded-lg">
+                  Step 1
+                </div>
+              }
+              content={
+                <div className="text-black w-[222px]">
+                  Deposit either ETH or any supported LST on Ethera
+                </div>
+              }
+            />
+          </div>
         </div>
-        <div className="top-5 md:top-[80px] lg:top-[90px] items-center left-1/2 md:left-[55%]  absolute -translate-x-1/2">
-          <img
-            ref={(el) => (imageRefs.current[1] = el)}
+        <div className="top-5 md:top-[80px] z-5 lg:top-[90px] items-center left-1/2 md:left-[55%]  absolute -translate-x-1/2">
+          <div
+            ref={el => (imageRefs.current[1] = el)}
             className=" mx-auto pl-5 md:pl-10 w-[140px] sm:h-[350px] sm:w-auto md:h-[400px] md:w-auto lg:w-auto lg:h-[508px] mt-6 relative "
-            src={Cassus02Img}
-          />
+          >
+            <img className="w-full h-full" src={Cassus02Img} />
+          </div>
         </div>
-        <div className="top-5 md:top-[80px] lg:top-[80px] items-center left-1/2 md:left-[55%]  absolute -translate-x-1/2">
-          <img
-            ref={(el) => (imageRefs.current[2] = el)}
-            className=" mx-auto pl-5 md:pl-10 w-[140px] sm:h-[350px] sm:w-auto md:h-[400px] md:w-auto lg:w-auto lg:h-[508px] mt-6 relative "
-            src={Cassus03Img}
+        <div className="top-5 md:top-[80px] lg:top-[80px] items-center left-1/2 md:left-[55%] absolute -translate-x-1/2">
+          <div
+            ref={el => (imageRefs.current[2] = el)}
+            className=" mx-auto pl-5 md:pl-10 w-[140px] sm:h-[350px] sm:w-auto md:h-[400px] md:w-auto lg:w-auto lg:h-[508px] mt-6 relative z-50 "
+          >
+            <img className="w-full h-full" src={Cassus03Img} />
+            <Tooltip
+              trigger={
+                <div className="text-xs md:text-lg absolute cursor-pointer top-[30px] md:top-[50px] left-[40px] md:left-[70px] translate-x-[-50%] bg-black text-primary px-2 py-1 rounded-lg">
+                  Step 3
+                </div>
+              }
+              content={
+                <div className="text-black w-[222px]">
+                  Safely allocate your funds on-chain with leading crypto
+                  managers
+                </div>
+              }
+            />
+          </div>
+          <Tooltip
+            trigger={
+              <div className="text-xs md:text-lg absolute z-50 cursor-pointer top-[50px] md:top-[90px] left-[40px] md:left-[70px] translate-x-[-50%] bg-black text-primary px-2 py-1 rounded-lg">
+                Step 2
+              </div>
+            }
+            content={
+              <div className="text-black w-[222px]">
+                Select the optimal strategy for your goals
+              </div>
+            }
           />
         </div>
         <div className="top-4 md:top-[140px] lg:top-[235px] items-center left-1/2 md:left-[55%]  absolute -translate-x-1/2">
           <img
-            ref={(el) => (imageRefs.current[3] = el)}
+            ref={el => (imageRefs.current[3] = el)}
             className=" mx-auto sm:w-[90px] w-[60px] md:w-[113px] mt-6 relative "
             src={Cassus05Img}
           />
         </div>
         <div className="top-5 md:top-[140px] lg:top-[235px] items-center left-1/2 md:left-[55%]  absolute -translate-x-1/2">
           <img
-            ref={(el) => (imageRefs.current[4] = el)}
+            ref={el => (imageRefs.current[4] = el)}
             className=" mx-auto w-[60px] sm:w-[90px] md:w-[113px] mt-6 relative "
             src={Cassus05Img}
           />

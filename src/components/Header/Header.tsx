@@ -38,7 +38,7 @@ export default function Header() {
           src={LogoImg}
           className="w-[109px] relative z-20 h-auto cursor-pointer lg:w-[145px]"
         />
-        <div className="relative z-20">
+        <div className="relative z-20 flex items-center">
           <div className="hidden lg:flex items-center gap-6 ml-16">
             {["About Us", "Features", "Ethera Token", "Airdrop Program"].map(
               element => (

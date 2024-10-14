@@ -99,7 +99,7 @@ const Card = ({
       </div>
       <div className="ml-9 mt-5 md:mt-7 relative">
         <ul className="list-disc pr-1 flex flex-col gap-3">
-          {items.map((item) => (
+          {items.map(item => (
             <li
               key={item}
               className="xl:text-lg text-black text-base md:text-lg md:leading-7 leading-6 xl:leading-6 font-light"
@@ -131,7 +131,7 @@ export default function RoadMap() {
         <div className="flex flex-col flex-wrap lg:flex-nowrap md:flex-row gap-10 justify-around items-center lg:justify-between w-fit">
           <div className="relative">
             <Card
-              className="relative lg:-top-20"
+              className="relative lg:-top-32"
               title={items[0].title}
               items={items[0].items}
               year={items[0].year}
@@ -143,7 +143,7 @@ export default function RoadMap() {
           </div>
           <div className="relative">
             <Card
-              className="relative lg:-top-20"
+              className="relative lg:-top-12"
               title={items[1].title}
               items={items[1].items}
               year={items[1].year}
@@ -154,14 +154,14 @@ export default function RoadMap() {
             />
           </div>
           <Card
-            className="relative lg:-top-10"
+            className="relative lg:-top-20"
             title={items[2].title}
             items={items[2].items}
             year={items[2].year}
           />
           <div className="relative">
             <Card
-              className="relative lg:-top-20 z-10"
+              className="relative lg:-top-40 z-10"
               title={items[3].title}
               items={items[3].items}
               year={items[3].year}
