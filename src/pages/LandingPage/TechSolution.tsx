@@ -27,27 +27,31 @@ const CardItem = ({ title, image }: { title: string; image: string }) => {
 export default function TechSolution() {
   const items = [
     {
-      title: "Market Data-Driven Interest Rates",
+      title: "Liquid Restaking",
+      description:
+        "Achieve liquidity with Ethera on your preferred DeFi projects",
       image: Tech1Img,
     },
     {
-      title: "Cross-Chain Functionality & NFT Focus",
+      title: "Simple Profit",
+      description: "Maximize your assets through a broader range of activities",
       image: Tech4Img,
     },
     {
-      title: "Institutional-Grade Offering (Cassus Pro)",
+      title: "Compounded Rewards",
+      description: "Expand earning rewards by staking in different protocols",
       image: Tech5Img,
     },
     {
-      title: "Partial Liquidations",
+      title: "Risk/Reward Management",
+      description:
+        "Customize your restaking strategies by selecting one or more networks to secure and earn yield",
       image: Tech2Img,
     },
     {
-      title: (
-        <>
-          RWA Collateral <br /> Support
-        </>
-      ),
+      title: "Enhance security",
+      description:
+        "Leverage the security provided by Ethereum’s validator network",
       image: Tech3Img,
     },
   ];
@@ -75,7 +79,7 @@ export default function TechSolution() {
 
         <div className="h-full w-full flex items-center justify-center">
           <div className="flex md:py-10 flex-wrap justify-around md:justify-center md:gap-x-[100px] md:gap-y-20 ">
-            {items.map(({ title, image }) => (
+            {items.map(({ title, image, description }) => (
               <div
                 className={cn(
                   "flex items-center justify-center flex-col gap-4 md:mt-0 mt-10"
@@ -87,6 +91,9 @@ export default function TechSolution() {
                 />
                 <div className="md:text-2xl text-base max-w-[160px] md:max-w-[288px] font-light text-center">
                   {title}
+                </div>
+                <div className="md:text-md text-sm max-w-[288px] font-light text-center text-gray-400">
+                  {description}
                 </div>
               </div>
             ))}

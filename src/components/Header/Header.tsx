@@ -21,7 +21,7 @@ export default function Header() {
   const navigate = useNavigate();
   const [active, setActive] = useState(false);
   const handleClick = () => {
-    setActive((pre) => !pre);
+    setActive(pre => !pre);
   };
   return (
     <div className="h-14 lg:overflow-hidden relative lg:h-[84px] w-full lg:bg-white bg-[#262B29] lg:bg-opacity-10 flex flex-row justify-between items-center px-5 md:px-8 z-[1000]">
@@ -40,8 +40,8 @@ export default function Header() {
         />
         <div className="relative z-20">
           <div className="hidden lg:flex items-center gap-6 ml-16">
-            {["About Us", "Features", "CASSUS Token", "Airdrop Program"].map(
-              (element) => (
+            {["About Us", "Features", "Ethera Token", "Airdrop Program"].map(
+              element => (
                 <div
                   className="text-lg font-normal text-white w-max cursor-pointer"
                   key={element}
@@ -61,7 +61,7 @@ export default function Header() {
           }}
           className="bg-primary hidden lg:flex h-12 rounded-lg items-center gap-2 ml-auto px-3"
         >
-          <span className="text-lg font-medium text-black">Enter Cassus</span>
+          <span className="text-lg font-medium text-black">Enter Ethera</span>
           <ArrowIcon />
         </button>
       </div>
@@ -86,7 +86,7 @@ export default function Header() {
               <div className="text-2xl font-normal text-white">About Us</div>
               <div className="text-2xl font-normal text-white">Features</div>
               <div className="text-2xl font-normal text-white">
-                CASSUS Token
+                Ethera Token
               </div>
               <div className="text-2xl font-normal text-white">
                 Airdrop Program
@@ -99,7 +99,7 @@ export default function Header() {
                 className="bg-primary w-fit flex h-12 rounded-lg items-center gap-2 px-3"
               >
                 <span className="text-xl font-medium text-black">
-                  Enter Cassus
+                  Enter Ethera
                 </span>
                 <ArrowIcon />
               </button>

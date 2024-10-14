@@ -58,12 +58,12 @@ export default function Intro() {
       <div className="max-w-[1440px] md:top-[45%] z-20 md:-translate-y-1/2 relative md:px-16 px-5 my-auto mx-auto">
         <div className="w-full max-w-[567px]">
           <h1 className="text-[40px] leading-[1.3em] font-normal text-white md:text-[64px] md:leading-[84px]">
-            Invest in DeFi, <br />
-            redefine your yield
+            Restaking: <br />
+            More Rewards, More Security,
           </h1>
           <div className="text-[#C0C0C0] md:text-[#C0C0C0] text-base md:text-lg leading-[32px] tracking-[0.02em] mt-3">
-            A cross-chain borrowing and lending protocol for NFTs, liquidity
-            positions, synthetic assets and real world assets.
+            A restaking platform to maximize profits & receive dual rewards from
+            multiple networks.
           </div>
           <button
             onClick={() => {
@@ -72,7 +72,7 @@ export default function Intro() {
             className="bg-primary h-12 md:h-[56px] rounded-xl flex items-center gap-2 px-3 md:px-6 mt-10"
           >
             <span className="text-base md:text-lg font-medium text-black">
-              Enter Cassus
+              Enter Ethera
             </span>
             <ArrowIcon />
           </button>

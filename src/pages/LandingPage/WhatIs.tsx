@@ -21,7 +21,7 @@ export default function WhatIs() {
   return (
     <div className="max-w-[1440px] md:px-16 px-5 mx-auto pt-[120px] w-full">
       <div className="text-lg md:text-2xl font-normal text-primary">
-        What is Cassus?
+        What is Ethera?
       </div>
       <div className="flex flex-col gap-3 mt-3 md:gap-0 w-full items-center md:items-start">
         <div className="">
@@ -32,10 +32,13 @@ export default function WhatIs() {
         </div>
         <div className="md:mt-6 w-full">
           <div className=" text-base md:text-xl max-w-[467px] font-light leading-[1.6em] tracking-[0.02em]">
-            Cassus is the AI-backed, cross-chain, decentralized{" "}
+            {/* Cassus is the AI-backed, cross-chain, decentralized{" "}
             <br className="hidden md:block" /> borrowing &  lending protocol
             <br className="block md:hidden" />
-            for NFTs, LPs & RWAs.
+            for NFTs, LPs & RWAs. */}
+            Ethera is a LRT platform that abstracts the technical, financial,
+            and risk management barriers for market participants, enabling
+            easier access to the emerging restaking primitive.
           </div>
         </div>
       </div>

@@ -12,12 +12,12 @@ export default function Footer() {
           window.open("https://app.cassus.org/");
         }}
       >
-        <div className="lg:text-[56px] leading-[48px] md:text-[56px] w-max lg:w-full text-[40px] font-normal text-center group-hover:text-primary transition-all duration-300">
-          Enter Cassus
+        <div className="lg:text-[56px] leading-[48px] md:text-[56px] w-full md:w-max text-[40px] font-normal text-center group-hover:text-primary transition-all duration-300">
+          Restaking With Ethera
         </div>
         <div className="md:text-lg text-base tracking-[0.02em] font-normal mt-2 md:mt-6 text-center md:leading-[40px] leading-[1.7em] group-hover:text-primary transition-all duration-300 w-[302px] md:w-auto">
-          Unlock the value of inactive blockchain assets by infusing them <br />{" "}
-          with liquidity and practical, novel solutions.
+          Enjoy the advantages of capital efficiency <br /> and robust network
+          security.
         </div>
       </div>
     </div>
