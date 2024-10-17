@@ -1,5 +1,5 @@
-// import { default as BgIntro } from "@/assets/images/background-intro.png";
-import { default as BgWebm } from "@/assets/video/steel-v2.webm";
+import { default as BgIntro } from "@/assets/images/bg-session-1.png";
+import LogoSession1 from "@/assets/images/logo-session-1.svg";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
@@ -23,60 +23,44 @@ export default function Intro() {
   // }, []);
   return (
     <div
-      ref={bgRef}
-      className=" pt-16 overflow-hidden md:pt-0 relative h-[700px] md:h-[100svh] bg-cover bg-center bg-no-repeat"
+      style={
+        {
+          // backgroundImage: `url(${BgIntro})`,
+          // filter: "blur(250px)",
+        }
+      }
+      className=" pt-16 overflow-hidden md:pt-0 relative h-[700px] md:h-[100svh]  bg-bottom bg-cover bg-no-repeat"
     >
-      <div
+      {/* <div
         style={{
           background: "rgba(37, 114, 84, 0.5)",
           filter: "blur(250px)",
         }}
         className="w-[900px] left-[-20%] h-[222px] absolute z-10 rotate-[-23deg]"
-      ></div>
-      {/* <div
+      ></div> */}
+      <div
         style={{
-          background: `url(${BgIntro})`,
+          backgroundImage: `url(${BgIntro})`,
           // filter: "blur(250px)",
         }}
-        className="absolute inset-0 bg-cover bg-no-repeat"
-      ></div> */}
-      <video
-        autoPlay
-        muted
-        playsInline
-        loop
-        className="h-[370px] sm:h-[500px] md:h-full object-cover absolute bottom-[-40px] md:bottom-[-200px] left-[15%] md:left-1/4 z-0"
-      >
-        <source src={BgWebm} type="video/webm" />
-        Your browser does not support the video tag.
-      </video>
-      <img
+        className="absolute inset-0 bg-contain md:bg-cover bg-bottom bg-no-repeat "
+      ></div>
+      {/* <img
         src={BgWebm}
         className="h-[370px] sm:h-[500px] md:h-full object-cover absolute bottom-[-40px] md:bottom-[-200px] left-[15%] md:left-1/4 z-0"
         alt=""
-      />
-      <div className="max-w-[1440px] md:top-[45%] z-20 md:-translate-y-1/2 relative md:px-16 px-5 my-auto mx-auto">
-        <div className="w-full max-w-[700px]">
-          <h1 className="text-[40px] leading-[1.3em] font-normal text-white md:text-[56px] md:leading-[72px]">
-            Restaking: More
-            <br />
-            Rewards, More Security
+      /> */}
+      <div className="max-w-[1170px] top-[20%] md:top-[35%] z-20 md:-translate-y-1/2 relative md:px-0 px-5 my-auto mx-auto">
+        <div className="button-gradient w-fit text-xs flex gap-1 mx-auto">
+          <img src={LogoSession1} alt="" />
+          ILUM.FI
+        </div>
+        <div className="w-full ">
+          <h1 className="text-[50px] leading-[1.3em] font-normal text-gradient md:text-[101px] md:leading-[104px] text-center">
+            Welcome to <br className="md:hidden block" /> the&nbsp;
+            <br className="md:block hidden" />
+            New Era <br className="md:hidden block" /> of DeFi
           </h1>
-          <div className="text-[#C0C0C0] md:text-[#C0C0C0] text-base md:text-lg leading-[32px] tracking-[0.02em] mt-3">
-            A restaking platform to maximize profits & receive dual rewards from
-            multiple networks.
-          </div>
-          <button
-            onClick={() => {
-              window.open("https://app.reyield.xyz/restake");
-            }}
-            className="bg-primary h-12 md:h-[56px] rounded-xl flex items-center gap-2 px-3 md:px-6 mt-10"
-          >
-            <span className="text-base md:text-lg font-medium text-black">
-              Enter Ethera
-            </span>
-            <ArrowIcon />
-          </button>
         </div>
       </div>
     </div>

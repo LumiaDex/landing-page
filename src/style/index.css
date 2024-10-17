@@ -12,7 +12,7 @@
 }
 
 * {
-  font-family: "Bricolage Grotesque", sans-serif;
+  /* font-family: "Bricolage Grotesque", sans-serif; */
   font-optical-sizing: auto;
   font-style: normal;
   font-variation-settings: "wdth" 100;
@@ -53,4 +53,16 @@ body {
 
 img {
   will-change: transform;
+}
+
+.bg-button-gradient {
+  @apply bg-gradient-to-t from-[#adcbf325] to-[#ADCBF31A];
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-b from-[#ADCBF3] to-[#DAE9FD];
+}
+
+.button-gradient {
+  @apply bg-gradient-to-b from-[#ADCBF3]/10 bg-opacity-10 to-[#ADCBF3]/20 border border-[#ADCBF3]/10 px-[18px] py-[10px] rounded-full outline-none;
 }

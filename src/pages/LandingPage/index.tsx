@@ -1,8 +1,7 @@
-import BgImg from "@/assets/images/landing-secction-2.png";
 import { Header } from "@/components";
 import PageLayout from "@/layouts/PageLayout";
-import { cn } from "@/utils/cn";
 
+import LogoSession1 from "@/assets/images/logo-session-1.svg";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
@@ -53,7 +52,7 @@ export default function LandingPage() {
     });
     return () => {
       window.removeEventListener("scroll", () => {});
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   }, []);
   return (
@@ -63,40 +62,28 @@ export default function LandingPage() {
         <div ref={divRef}>
           <Intro />
         </div>
-        <div
-          className={cn(
-            "md:h-[104px] h-[84px] w-full md:bg-white md:bg-opacity-10 bg-left-bottom md:bg-auto backdrop-blur-[30px]",
-            "flex items-center justify-center relative overflow-hidden"
-          )}
-        >
-          <div
-            ref={percentRef}
-            className="w-0 h-[1px] absolute top-0 left-0 bg-[#03d182c9]"
-          ></div>
-          <div className="absolute top-1/2 -translate-y-1/2 left-0  right-0">
-            <div
-              ref={textRef}
-              className="justify-between items-center h-[92px] px-12 w-full flex gap-20"
-            >
-              {new Array(50).fill("Powered by Lumia").map((element, idx) => (
-                <>
-                  <div
-                    key={`running-${idx}`}
-                    className="text-[#03D181] text-xl min-w-max relative font-normal md:tracking-[0.4em]"
-                  >
-                    {element}
-                    <div className="h-6 absolute -left-10 top-1/2 -translate-y-1/2 w-[2px] bg-[#03D181]" />
-                  </div>
-                </>
-              ))}
+        <div className="max-w-[1170px] mx-auto">
+          <div className=" z-20 md:-translate-y-1/2 relative md:px-0 px-5 my-auto mx-auto ">
+            <div className="button-gradient w-fit text-xs flex gap-1 mx-auto">
+              <img src={LogoSession1} alt="" />
+              ILUM.FI
+            </div>
+            <div className="mt-4 ">
+              <h1 className="text-[20px] leading-[1.3em] font-normal text-gradient md:text-[28px] text-center">
+                Ilum is a DeFi platform that merges decentralized finance with
+                real-world assets. It provides a seamless and user-friendly
+                experience for exploring and providing liquidity to a diverse
+                range of assets.
+              </h1>
             </div>
           </div>
         </div>
+
         <div
-          style={{
-            backgroundImage: `url(${BgImg})`,
-          }}
-          className="min-h-[100vh] relative bg-top bg-cover bg-center bg-no-repeat md:pb-20 pb-10"
+          // style={{
+          //   backgroundImage: `url(${BgImg})`,
+          // }}
+          className="min-h-[100vh] relative max-w-[1170px] mx-auto bg-cover bg-center bg-no-repeat md:pb-20 pb-10"
         >
           <BoxWhatIs />
           <TechSolution />

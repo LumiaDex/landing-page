@@ -1,4 +1,5 @@
-import LogoImg from "@/assets/images/logo.png";
+import HeaderShadowImg from "@/assets/images/header-shadow.png";
+import LogoImg from "@/assets/images/logo-header.svg";
 import { ROUTES } from "@/routes/paths.route";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -24,90 +25,90 @@ export default function Header() {
     setActive(pre => !pre);
   };
   return (
-    <div className="h-14 lg:overflow-hidden relative lg:h-[84px] w-full lg:bg-white bg-[#262B29] lg:bg-opacity-10 flex flex-row justify-between items-center px-5 md:px-8 z-[1000]">
-      <div
-        style={{
-          background: "rgba(37, 114, 84, 0.2)",
-          filter: "blur(250px)",
-        }}
-        className="w-[900px] hidden lg:block left-[-20%] h-[222px] absolute z-10 rotate-[-23deg]"
-      ></div>
-      <div className="lg:basis-2/5 flex">
+    <>
+      <div className="absolute top-16 left-1/2 translate-x-[-50%] w-[500px] z-[1000]">
         <img
-          onClick={() => navigate(ROUTES.LANDING_PAGE)}
-          src={LogoImg}
-          className="w-[109px] relative z-20 h-auto cursor-pointer lg:w-[145px]"
+          src={HeaderShadowImg}
+          className=" cursor-pointer w-[500px] h-[400px]"
         />
-        <div className="relative z-20 flex items-center">
-          <div className="hidden lg:flex items-center gap-6 ml-16">
-            {["About Us", "Features", "Ethera Token", "Airdrop Program"].map(
-              element => (
+      </div>
+      <div className="h-14 mx-auto lg:overflow-hidden absolute top-0 left-1/2 translate-x-[-50%] lg:h-[84px] w-full  flex flex-row justify-between items-center px-5 md:px-0 z-[1000] max-w-[1170px]">
+        <div className="flex-1">
+          <img
+            onClick={() => navigate(ROUTES.LANDING_PAGE)}
+            src={LogoImg}
+            className="w-[109px] relative z-20 h-auto cursor-pointer lg:w-[145px] "
+          />
+        </div>
+        <div className=" flex flex-1 justify-center">
+          <div className="relative z-20 flex items-center">
+            <div className="hidden lg:flex items-center gap-6 justify-center">
+              {["Swap", "Pools", "Liquidity", "Hoard"].map(element => (
                 <div
-                  className="text-lg font-normal text-white w-max cursor-pointer"
+                  className="text-md font-normal text-white w-max cursor-pointer"
                   key={element}
                 >
                   {element}
                 </div>
-              )
-            )}
-          </div>
-        </div>
-      </div>
-
-      <div className=" lg:basis-3/5">
-        <button
-          onClick={() => {
-            window.open("https://app.reyield.xyz/restake");
-          }}
-          className="bg-primary hidden lg:flex h-12 rounded-lg items-center gap-2 ml-auto px-3"
-        >
-          <span className="text-lg font-medium text-black">Enter Ethera</span>
-          <ArrowIcon />
-        </button>
-      </div>
-      <div
-        onClick={handleClick}
-        className="lg:hidden relative z-[20] flex items-center gap-1.5"
-      >
-        <span className="text-primary font-bold text-xl tracking-[-0.04em] uppercase">
-          Menu
-        </span>
-        <MenuIcon />
-      </div>
-
-      {active && (
-        <>
-          <div
-            onClick={handleClick}
-            className="absolute w-[100vw] h-[100svh] inset-0 bg-transparent z-[10000]"
-          ></div>
-          <div className="absolute z-[10001] top-14 bg-black rounded-[24px] border border-primary right-0 rounded-tr-none p-10">
-            <div className="flex flex-col gap-10">
-              <div className="text-2xl font-normal text-white">About Us</div>
-              <div className="text-2xl font-normal text-white">Features</div>
-              <div className="text-2xl font-normal text-white">
-                Ethera Token
-              </div>
-              <div className="text-2xl font-normal text-white">
-                Airdrop Program
-              </div>
-
-              <button
-                onClick={() => {
-                  window.open("https://app.reyield.xyz/restake");
-                }}
-                className="bg-primary w-fit flex h-12 rounded-lg items-center gap-2 px-3"
-              >
-                <span className="text-xl font-medium text-black">
-                  Enter Ethera
-                </span>
-                <ArrowIcon />
-              </button>
+              ))}
             </div>
           </div>
-        </>
-      )}
-    </div>
+        </div>
+
+        <div className="flex-1 ">
+          <button
+            onClick={() => {
+              window.open("https://app.reyield.xyz/restake");
+            }}
+            className="button-gradient flex h-12 items-center gap-2 ml-auto px-3"
+          >
+            <span className="text-md font-medium whitespace-nowrap">
+              Enter Ilum.fi
+            </span>
+            <ArrowIcon />
+          </button>
+        </div>
+        {/* <div
+          onClick={handleClick}
+          className="lg:hidden relative z-[20] flex items-center gap-1.5"
+        >
+          <MenuIcon />
+        </div> */}
+
+        {active && (
+          <>
+            <div
+              onClick={handleClick}
+              className="absolute w-[100vw] h-[100svh] inset-0 bg-transparent z-[10000]"
+            ></div>
+            <div className="absolute z-[10001] top-14 bg-black rounded-[24px] border border-primary right-0 rounded-tr-none p-10">
+              <div className="flex flex-col gap-10">
+                <div className="text-2xl font-normal text-white">About Us</div>
+                <div className="text-2xl font-normal text-white">Features</div>
+                <div className="text-2xl font-normal text-white">
+                  Ethera Token
+                </div>
+                <div className="text-2xl font-normal text-white">
+                  Airdrop Program
+                </div>
+
+                <button
+                  onClick={() => {
+                    window.open("https://app.reyield.xyz/restake");
+                  }}
+                  className="bg-gradient1 w-fit flex h-12 rounded-lg items-center gap-2 px-3"
+                >
+                  <span className="text-xl font-medium text-black">
+                    Enter Ethera
+                  </span>
+                  <ArrowIcon />
+                </button>
+              </div>
+            </div>
+          </>
+        )}
+      </div>
+    </>
   );
 }
 

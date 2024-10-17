@@ -7,6 +7,7 @@ export default {
   ],
   theme: {
     fontFamily: {
+      sans: ["Golos Text", "sans-serif"],
     },
     screens: {
       xs: "428px",
@@ -27,8 +28,9 @@ export default {
         container: '1440px',
       },
       colors: {
-        primary: '#03D181',
-      }
+        primary: 'rgba(173, 203, 243, 0.1)',
+        secondary: "rgba(151, 161, 192, 1)"
+      },
     },
   },
   plugins: [
