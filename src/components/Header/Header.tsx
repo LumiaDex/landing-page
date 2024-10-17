@@ -58,7 +58,7 @@ export default function Header() {
         <div className="flex-1 ">
           <button
             onClick={() => {
-              window.open("https://app.reyield.xyz/restake");
+              // window.open("https://app.reyield.xyz/restake");
             }}
             className="button-gradient flex h-12 items-center gap-2 ml-auto px-3"
           >
@@ -94,7 +94,7 @@ export default function Header() {
 
                 <button
                   onClick={() => {
-                    window.open("https://app.reyield.xyz/restake");
+                    // window.open("https://app.reyield.xyz/restake");
                   }}
                   className="bg-gradient1 w-fit flex h-12 rounded-lg items-center gap-2 px-3"
                 >
