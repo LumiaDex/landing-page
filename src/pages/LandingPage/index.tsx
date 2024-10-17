@@ -4,12 +4,11 @@ import PageLayout from "@/layouts/PageLayout";
 import LogoSession1 from "@/assets/images/logo-session-1.svg";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect, useRef } from "react";
-import BoxWhatIs from "./BoxWhatIs";
+import { useRef } from "react";
 import Footer from "./Footer";
 import Intro from "./Intro";
-import RoadMap from "./RoadMap";
-import TechSolution from "./TechSolution";
+import { SessionSecond } from "./SessionSecond";
+import { SessionThird } from "./SessionThird";
 
 // Register the ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -19,42 +18,42 @@ export default function LandingPage() {
   const divRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
   const percentRef = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const textElement = textRef.current;
+  // useEffect(() => {
+  //   const textElement = textRef.current;
 
-    gsap.to(textElement, {
-      xPercent: -100, // Move it all the way to the left (based on content width)
-      ease: "none",
-      duration: 10, // Adjust this for the speed you want
-      repeat: -1, // Infinite repeat
-    });
-  }, []);
+  //   gsap.to(textElement, {
+  //     xPercent: -100, // Move it all the way to the left (based on content width)
+  //     ease: "none",
+  //     duration: 10, // Adjust this for the speed you want
+  //     repeat: -1, // Infinite repeat
+  //   });
+  // }, []);
 
-  useEffect(() => {
-    gsap.to(divRef.current, {
-      yPercent: 170,
-      ease: "none",
-      scrollTrigger: {
-        trigger: parallaxRef.current,
-        scrub: true,
-      },
-    });
+  // useEffect(() => {
+  //   gsap.to(divRef.current, {
+  //     yPercent: 170,
+  //     ease: "none",
+  //     scrollTrigger: {
+  //       trigger: parallaxRef.current,
+  //       scrub: true,
+  //     },
+  //   });
 
-    window.addEventListener("scroll", () => {
-      if (divRef.current?.clientHeight && window.scrollY) {
-        const percent =
-          window.scrollY > divRef.current.clientHeight
-            ? 1
-            : window.scrollY / divRef.current.clientHeight;
-        percentRef.current!.style.width = `${percent * 100}%`;
-        // textRef.current!.style.transform = `translateX(${-percent * 100}%)`;
-      }
-    });
-    return () => {
-      window.removeEventListener("scroll", () => {});
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    };
-  }, []);
+  //   window.addEventListener("scroll", () => {
+  //     if (divRef.current?.clientHeight && window.scrollY) {
+  //       const percent =
+  //         window.scrollY > divRef.current.clientHeight
+  //           ? 1
+  //           : window.scrollY / divRef.current.clientHeight;
+  //       percentRef.current!.style.width = `${percent * 100}%`;
+  //       // textRef.current!.style.transform = `translateX(${-percent * 100}%)`;
+  //     }
+  //   });
+  //   return () => {
+  //     window.removeEventListener("scroll", () => {});
+  //     ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+  //   };
+  // }, []);
   return (
     <PageLayout>
       <Header />
@@ -62,7 +61,7 @@ export default function LandingPage() {
         <div ref={divRef}>
           <Intro />
         </div>
-        <div className="max-w-[1170px] mx-auto">
+        <div className="max-w-[925px] mx-auto">
           <div className=" z-20 md:-translate-y-1/2 relative md:px-0 px-5 my-auto mx-auto ">
             <div className="button-gradient w-fit text-xs flex gap-1 mx-auto">
               <img src={LogoSession1} alt="" />
@@ -79,19 +78,13 @@ export default function LandingPage() {
           </div>
         </div>
 
-        <div
-          // style={{
-          //   backgroundImage: `url(${BgImg})`,
-          // }}
-          className="min-h-[100vh] relative max-w-[1170px] mx-auto bg-cover bg-center bg-no-repeat md:pb-20 pb-10"
-        >
-          <BoxWhatIs />
-          <TechSolution />
-
-          <RoadMap />
+        <div className="min-h-[100vh] relative max-w-[1170px] mx-auto bg-cover bg-center bg-no-repeat md:pb-20 pb-10">
+          <SessionSecond />
+          <SessionThird />
         </div>
       </div>
       <Footer />
+      <div className="absolute bottom-0 left-0 right-0 h-[400px] w-[100svw] bg-gradient-to-t from-[#ADCBF3]/10 to-[#ADCBF3]/0" />
     </PageLayout>
   );
 }

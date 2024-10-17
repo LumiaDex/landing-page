@@ -43,7 +43,7 @@ export default function Intro() {
           backgroundImage: `url(${BgIntro})`,
           // filter: "blur(250px)",
         }}
-        className="absolute inset-0 bg-contain md:bg-cover bg-bottom bg-no-repeat "
+        className="absolute inset-0 bg-contain md:bg-cover bg-bottom mt-200px bg-no-repeat "
       ></div>
       {/* <img
         src={BgWebm}

@@ -64,5 +64,12 @@ img {
 }
 
 .button-gradient {
-  @apply bg-gradient-to-b from-[#ADCBF3]/10 bg-opacity-10 to-[#ADCBF3]/20 border border-[#ADCBF3]/10 px-[18px] py-[10px] rounded-full outline-none;
+  @apply bg-gradient-to-b from-[#ADCBF3]/10 bg-opacity-10 to-[#ADCBF3]/20 border border-[#ADCBF3]/10 px-[18px] py-[10px] rounded-full outline-none hover:bg-[#ADCBF3]/20 hover:border-[#ADCBF3]/20 hover:text-white transition-all duration-200;
+}
+.bg-radial-gradient {
+  background: radial-gradient(
+    circle,
+    rgba(173, 203, 243, 0.05) 20%,
+    rgba(173, 203, 243, 0.1) 100%
+  );
 }
