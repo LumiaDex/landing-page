@@ -14,3 +14,5 @@ export const NETWORK = import.meta.env.VITE_NETWORK;
 export const BASE_API = import.meta.env.VITE_BASE_API;
 
 export const RPC_NODE = import.meta.env.VITE_RPC_NODE;
+
+export const LINK_TO_APP = "https://app.ilum.fi";

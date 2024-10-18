@@ -1,6 +1,7 @@
 import HeaderShadowImg from "@/assets/images/header-shadow.png";
 import LogoImg from "@/assets/images/logo-header.svg";
 import { ROUTES } from "@/routes/paths.route";
+import { LINK_TO_APP } from "@/utils/constant";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -18,6 +19,25 @@ const MenuIcon = () => (
   </svg>
 );
 
+const Links = [
+  {
+    name: "Swap",
+    path: LINK_TO_APP + "/swap",
+  },
+  {
+    name: "Pools",
+    path: LINK_TO_APP + "/pools",
+  },
+  {
+    name: "Liquidity",
+    path: LINK_TO_APP + "/liquidity",
+  },
+  {
+    name: "Hoard",
+    path: LINK_TO_APP + "/points",
+  },
+];
+
 export default function Header() {
   const navigate = useNavigate();
   const [active, setActive] = useState(false);
@@ -26,7 +46,7 @@ export default function Header() {
   };
   return (
     <>
-      <div className="absolute top-16 left-1/2 translate-x-[-50%] w-[500px] z-[1000]">
+      <div className="absolute top-20 left-1/2 translate-x-[-50%] w-[500px] z-[1000]">
         <img
           src={HeaderShadowImg}
           className=" cursor-pointer w-[500px] h-[400px]"
@@ -43,13 +63,14 @@ export default function Header() {
         <div className=" flex flex-1 justify-center">
           <div className="relative z-20 flex items-center">
             <div className="hidden lg:flex items-center gap-6 justify-center">
-              {["Swap", "Pools", "Liquidity", "Hoard"].map(element => (
-                <div
-                  className="text-md font-normal text-white w-max cursor-pointer"
-                  key={element}
+              {Links.map(element => (
+                <a
+                  className="text-md font-normal text-white w-max cursor-pointer hover:text-[#ADCBF3]"
+                  key={element.name}
+                  href={element.path}
                 >
-                  {element}
-                </div>
+                  {element.name}
+                </a>
               ))}
             </div>
           </div>
@@ -58,7 +79,7 @@ export default function Header() {
         <div className="flex-1 ">
           <button
             onClick={() => {
-              // window.open("https://app.reyield.xyz/restake");
+              window.open(LINK_TO_APP + "/swap");
             }}
             className="button-gradient flex h-12 items-center gap-2 ml-auto px-3"
           >
@@ -83,23 +104,23 @@ export default function Header() {
             ></div>
             <div className="absolute z-[10001] top-14 bg-black rounded-[24px] border border-primary right-0 rounded-tr-none p-10">
               <div className="flex flex-col gap-10">
-                <div className="text-2xl font-normal text-white">About Us</div>
-                <div className="text-2xl font-normal text-white">Features</div>
-                <div className="text-2xl font-normal text-white">
-                  Ethera Token
-                </div>
-                <div className="text-2xl font-normal text-white">
-                  Airdrop Program
-                </div>
+                {Links.map(element => (
+                  <a
+                    href={element.path}
+                    className="text-2xl font-normal text-white"
+                  >
+                    {element.name}
+                  </a>
+                ))}
 
                 <button
                   onClick={() => {
-                    // window.open("https://app.reyield.xyz/restake");
+                    window.open(LINK_TO_APP + "/swap");
                   }}
                   className="bg-gradient1 w-fit flex h-12 rounded-lg items-center gap-2 px-3"
                 >
                   <span className="text-xl font-medium text-black">
-                    Enter Ethera
+                    Enter Ilum.fi
                   </span>
                   <ArrowIcon />
                 </button>

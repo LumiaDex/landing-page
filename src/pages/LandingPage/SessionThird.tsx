@@ -1,6 +1,7 @@
 import SessionImg1 from "@/assets/images/img-session-3-1.png";
 import SessionImg2 from "@/assets/images/img-session-3-2.png";
 import { Card } from "@/components/Card";
+import { LINK_TO_APP } from "@/utils/constant";
 
 const data = [
   {
@@ -41,7 +42,10 @@ export const SessionThird = () => {
             <div className="text-[#97A1C0] text-[12px] md:text-[14px] text-center">
               Swap crypto at the best rates
             </div>
-            <button className="button-gradient text-[14px] font-bold">
+            <button
+              className="button-gradient text-[14px] font-bold"
+              onClick={() => window.open(LINK_TO_APP + "/swap", "_blank")}
+            >
               OPEN APP
             </button>
           </div>
