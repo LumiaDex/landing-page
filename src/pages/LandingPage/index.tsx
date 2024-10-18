@@ -1,3 +1,4 @@
+import { default as BgIntro } from "@/assets/images/bg-session-1.png";
 import { Header } from "@/components";
 import PageLayout from "@/layouts/PageLayout";
 
@@ -56,6 +57,14 @@ export default function LandingPage() {
   // }, []);
   return (
     <PageLayout>
+      <div
+        className="absolute top-0 left-0 right-0 h-[100px] w-[100svw] "
+        style={{
+          backgroundImage: `url(${BgIntro})`,
+          backgroundPosition: "top",
+          backgroundRepeat: "no-repeat",
+        }}
+      />
       <Header />
       <div>
         <div ref={divRef}>

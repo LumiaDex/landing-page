@@ -29,7 +29,7 @@ export default function Intro() {
           // filter: "blur(250px)",
         }
       }
-      className=" pt-16 overflow-hidden md:pt-0 relative h-[700px] md:h-[100svh]  bg-bottom bg-cover bg-no-repeat"
+      className=" pt-20 overflow-hidden md:pt-0 relative min-h-[700px] h-[700px] md:h-[100svh]  bg-bottom bg-cover bg-no-repeat mt-16"
     >
       {/* <div
         style={{
