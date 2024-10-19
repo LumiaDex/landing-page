@@ -36,11 +36,11 @@ export const SessionSecond = () => {
               <div className=" relative flex flex-col items-start justify-end ">
                 <div className="button-gradient w-fit text-xs flex gap-1 ">
                   <img src={LogoSession1} alt="" />
-                  LUM
+                  ILM
                 </div>
                 <div className="mt-4 mb-4 md:mb-0">
                   <div className="text-[20px] leading-[1.3em] font-normal text-gradient md:text-[28px] ">
-                    LUM - the heart of ILUM, one token to rule them all
+                    ILM - the heart of ILUM, one token to rule them all
                   </div>
                 </div>
               </div>
@@ -76,7 +76,7 @@ export const SessionSecond = () => {
               <div className=" relative flex flex-col items-start justify-end ">
                 <div className="button-gradient w-fit text-xs flex gap-1 ">
                   <img src={LogoSession2} alt="" />
-                  L-Stake
+                  L-STAKE
                 </div>
                 <div className="mt-4 mb-4 md:mb-0 ">
                   <div className="text-[20px] leading-[1.3em] font-normal text-gradient md:text-[28px] ">
