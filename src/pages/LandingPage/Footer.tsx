@@ -21,9 +21,9 @@ const socials = [
 ];
 export default function Footer() {
   return (
-    <div className="w-full z-50 relative flex flex-col md:flex-row items-center justify-center gap-3 mb-[30px] md:justify-between max-w-[1170px] mx-auto px-4 xl:px-0">
+    <div className="w-full z-50 relative flex flex-col-reverse md:flex-row items-center justify-center gap-3 mb-[30px] md:justify-between max-w-[1170px] mx-auto px-4 xl:px-0">
       <div className="text-xs text-[#97A1C0]">
-        All rigths reserved. © 2024 ILUM.FI
+        All rigths reserved. © 2024 ILUM
       </div>
       <div className="flex gap-4">
         {socials.map(({ name, icon: Icon, link }) => (
@@ -31,6 +31,9 @@ export default function Footer() {
             <Icon className="cursor-pointer" />
           </a>
         ))}
+      </div>
+      <div className="px-6 text-xs text-[#97A1C0] py-3 rounded-full bg-button-gradient h-fit flex ">
+        Powered by Lumia
       </div>
     </div>
   );
