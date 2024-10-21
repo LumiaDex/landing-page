@@ -33,8 +33,9 @@ const Links = [
     path: LINK_TO_APP + "/liquidity",
   },
   {
-    name: "Hoard",
-    path: LINK_TO_APP + "/points",
+    name: "Docs",
+    path: "http://docs.ilum.fi/",
+    isBlank: true,
   },
 ];
 
@@ -42,7 +43,7 @@ export default function Header() {
   const navigate = useNavigate();
   const [active, setActive] = useState(false);
   const handleClick = () => {
-    setActive(pre => !pre);
+    setActive((pre) => !pre);
   };
   return (
     <>
@@ -63,11 +64,12 @@ export default function Header() {
         <div className=" flex flex-1 justify-center">
           <div className="relative z-20 flex items-center">
             <div className="hidden lg:flex items-center gap-6 justify-center">
-              {Links.map(element => (
+              {Links.map((element) => (
                 <a
                   className="text-md font-normal text-white w-max cursor-pointer hover:text-[#ADCBF3]"
                   key={element.name}
                   href={element.path}
+                  target={element?.isBlank ? "_blank" : "_self"}
                 >
                   {element.name}
                 </a>
@@ -104,7 +106,7 @@ export default function Header() {
             ></div>
             <div className="absolute z-[10001] top-14 bg-black rounded-[24px] border border-primary right-0 rounded-tr-none p-10">
               <div className="flex flex-col gap-10">
-                {Links.map(element => (
+                {Links.map((element) => (
                   <a
                     href={element.path}
                     className="text-2xl font-normal text-white"
