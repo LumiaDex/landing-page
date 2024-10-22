@@ -32,9 +32,9 @@ export default function Footer() {
           </a>
         ))}
       </div>
-      <div className="px-6 text-xs text-[#97A1C0] py-3 rounded-full bg-button-gradient h-fit flex ">
+      {/* <div className="px-6 text-xs text-[#97A1C0] py-3 rounded-full bg-button-gradient h-fit flex ">
         Powered by Lumia
-      </div>
+      </div> */}
     </div>
   );
 }

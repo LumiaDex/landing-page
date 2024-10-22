@@ -1,5 +1,5 @@
 import { default as BgIntro } from "@/assets/images/bg-session-1.png";
-import LogoSession1 from "@/assets/images/logo-session-1.svg";
+import LogoSession1 from "@/assets/images/logo-lumia.svg";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
@@ -45,6 +45,8 @@ export default function Intro() {
         }}
         className="absolute inset-0 bg-contain md:bg-cover bg-bottom mt-200px bg-no-repeat "
       ></div>
+      <div className="absolute z-10 top-0 left-0 right-0 md:h-[200px] w-[100svw] bg-opacity-20 bg-gradient-to-t from-[#05060F]/5 to-[#05060F]" />
+
       {/* <img
         src={BgWebm}
         className="h-[370px] sm:h-[500px] md:h-full object-cover absolute bottom-[-40px] md:bottom-[-200px] left-[15%] md:left-1/4 z-0"
@@ -52,8 +54,11 @@ export default function Intro() {
       /> */}
       <div className="max-w-[1170px] top-[20%] md:top-[35%] z-20 md:-translate-y-1/2 relative md:px-0 px-5 my-auto mx-auto">
         <div className="button-gradient w-fit text-xs flex gap-1 mx-auto">
-          <img src={LogoSession1} alt="" />
-          ILUM.FI
+          <p className="text-gradient uppercase">Powered by</p>
+          <img src={LogoSession1} alt="" className="w-13" />
+        </div>
+        <div className="text-gradient text-center uppercase text-xs my-4">
+          Real assets fueling DeFi growth
         </div>
         <div className="w-full ">
           <h1 className="text-[50px] leading-[1.3em] font-normal text-gradient md:text-[101px] md:leading-[104px] text-center">
