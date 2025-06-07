@@ -73,14 +73,11 @@ export default function LandingPage() {
           <div className=" z-20 md:-translate-y-1/2 relative md:px-0 px-5 my-auto mx-auto ">
             <div className="button-gradient w-fit text-xs flex gap-1 mx-auto">
               <img src={LogoSession1} alt="" />
-              ILUM.FI
+              ilum.fi
             </div>
             <div className="mt-4 ">
               <h1 className="text-[20px] leading-[1.3em] font-normal text-gradient md:text-[28px] text-center">
-                Ilum is a DeFi platform that merges decentralized finance with
-                real-world assets. It provides a seamless and user-friendly
-                experience for exploring and providing liquidity to a diverse
-                range of assets.
+                ilum.fi merges cross-chain liquidity, AI-powered strategies, and real-world asset integration to deliver unmatched performance and simplicity in decentralized finance
               </h1>
             </div>
           </div>
