@@ -58,13 +58,13 @@ export default function Intro() {
           <img src={LogoSession1} alt="" className="w-13" />
         </div>
         <div className="text-gradient text-center uppercase text-xs my-4">
-          Real assets fueling DeFi growth
+          Trade Smarter with AI, Go Farther Across Chains
         </div>
         <div className="w-full ">
           <h1 className="text-[50px] leading-[1.3em] font-normal text-gradient md:text-[101px] md:leading-[104px] text-center">
-            Welcome to <br className="md:hidden block" /> the&nbsp;
+            EFFORTLESS &nbsp;
             <br className="md:block hidden" />
-            New Era <br className="md:hidden block" /> of DeFi
+            DEFI EXECUTION
           </h1>
         </div>
       </div>
