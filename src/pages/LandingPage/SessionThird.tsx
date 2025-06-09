@@ -5,6 +5,7 @@ import LogoSession1 from "@/assets/images/session-2-1.svg";
 import LogoSession2 from "@/assets/images/session-2-2.svg";
 import { Card } from "@/components/Card";
 import { cn } from "@/utils/cn";
+import { useState } from "react";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -44,20 +45,31 @@ const items = [
   },
 ];
 
-const Section = ({
-  logo,
-  title,
-  label,
-}: {
+interface SectionProps {
   logo: string;
   title: { label: string; text: string }[];
   label: string;
-}) => (
+  isActive: boolean;
+}
+
+const Section = ({ logo, title, label, isActive }: SectionProps) => (
   <div className="relative w-full flex flex-col gap-8">
-    <Card className="items-start p-2 md:p-6">
+    <Card
+      className={cn(
+        "items-start p-2 md:p-6 transition-all duration-300",
+        isActive
+          ? "bg-gradient-to-r from-blue-500/10 to-purple-500/10 shadow-lg border-white"
+          : "bg-background"
+      )}
+    >
       <div className="flex flex-col justify-between h-full p-6 md:p-2">
         <div className="flex flex-col items-center md:items-start justify-end">
-          <div className="button-gradient w-fit text-xs flex gap-1 uppercase">
+          <div
+            className={cn(
+              "button-gradient w-fit text-xs flex gap-1 uppercase",
+              isActive ? "text-white" : "text-muted-foreground"
+            )}
+          >
             <img src={logo} alt="" />
             {label}
           </div>
@@ -65,7 +77,10 @@ const Section = ({
             {title.map((item) => (
               <div
                 key={item.label}
-                className="font-bold text-gradient text-xl md:text-2xl max-md:text-center"
+                className={cn(
+                  "font-bold text-xl md:text-2xl max-md:text-center",
+                  isActive ? "text-gradient" : "text-foreground"
+                )}
               >
                 {item.text}
               </div>
@@ -78,13 +93,19 @@ const Section = ({
 );
 
 export const SessionThird = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
   return (
     <div className={cn("my-40 relative max-w-screen-lg mx-auto")}>
       <div className="flex flex-col-reverse md:flex-row gap-6 w-full mx-auto px-4 md:px-0 items-center">
         <div className="flex w-fit flex-col gap-6">
-          <Section {...items[0]} />
-          <Section {...items[1]} />
-          <Section {...items[2]} />
+          {items.map((item, index) => (
+            <Section
+              key={item.label}
+              {...item}
+              isActive={index === activeIndex}
+            />
+          ))}
         </div>
         <div className="md:w-1/2 h-[200px] md:h-[300px]">
           <Swiper
@@ -92,28 +113,17 @@ export const SessionThird = () => {
             autoplay={{ delay: 3000 }}
             loop={true}
             className="h-full"
+            onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
           >
-            <SwiperSlide>
-              <img
-                src={SessionImg1}
-                alt="Graphic"
-                className="w-full h-full object-contain"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                src={SessionImg2}
-                alt="Graphic"
-                className="w-full h-full object-contain"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                src={SessionImg3}
-                alt="Graphic"
-                className="w-full h-full object-contain"
-              />
-            </SwiperSlide>
+            {items.map((item) => (
+              <SwiperSlide key={item.label}>
+                <img
+                  src={item.image}
+                  alt={item.label}
+                  className="w-full h-full object-contain"
+                />
+              </SwiperSlide>
+            ))}
           </Swiper>
         </div>
       </div>
