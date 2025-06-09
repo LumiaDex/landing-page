@@ -5,8 +5,10 @@ import LogoSession1 from "@/assets/images/logo-session-1.svg";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
+import CompetitiveAdvantages from "./CompetitiveAdvantages";
 import Footer from "./Footer";
 import Intro from "./Intro";
+import { SessionEnd } from "./SessionEnd";
 import { SessionSecond } from "./SessionSecond";
 import { SessionThird } from "./SessionThird";
 
@@ -77,15 +79,19 @@ export default function LandingPage() {
             </div>
             <div className="mt-4 ">
               <h1 className="text-[20px] leading-[1.3em] font-normal text-gradient md:text-[28px] text-center">
-                ilum.fi merges cross-chain liquidity, AI-powered strategies, and real-world asset integration to deliver unmatched performance and simplicity in decentralized finance
+                ilum.fi merges cross-chain liquidity, AI-powered strategies, and
+                real-world asset integration to deliver unmatched performance
+                and simplicity in decentralized finance
               </h1>
             </div>
           </div>
         </div>
 
-        <div className="min-h-[100vh] relative max-w-[1170px] mx-auto bg-cover bg-center bg-no-repeat md:pb-20 pb-10">
+        <div className="min-h-[100vh] relative max-w-screen-2xl mx-auto bg-cover bg-center bg-no-repeat md:pb-20 pb-10">
           <SessionSecond />
           <SessionThird />
+          <CompetitiveAdvantages />
+          <SessionEnd />
         </div>
       </div>
       <Footer />

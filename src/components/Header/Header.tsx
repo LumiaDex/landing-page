@@ -53,7 +53,7 @@ export default function Header() {
           className=" cursor-pointer w-[500px] h-[400px]"
         />
       </div>
-      <div className="h-14 mx-auto lg:overflow-hidden absolute top-0 left-1/2 translate-x-[-50%] lg:h-[84px] w-full  flex flex-row justify-between items-center px-5 md:px-0 z-[1000] max-w-[1170px]">
+      <div className="h-14 mx-auto lg:overflow-hidden absolute top-0 left-1/2 translate-x-[-50%] lg:h-[84px] w-full  flex flex-row justify-between items-center px-2 z-[1000] max-w-screen-2xl">
         <div className="flex-1">
           <img
             onClick={() => navigate(ROUTES.LANDING_PAGE)}
@@ -83,7 +83,7 @@ export default function Header() {
             onClick={() => {
               window.open(LINK_TO_APP + "/swap");
             }}
-            className="button-gradient flex h-12 items-center gap-2 ml-auto px-3"
+            className="button-gradient flex h-12 items-center gap-4 ml-auto !pr-2"
           >
             <span className="text-md font-medium whitespace-nowrap">
               Enter Ilum.fi

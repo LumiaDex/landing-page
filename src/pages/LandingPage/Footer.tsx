@@ -21,7 +21,7 @@ const socials = [
 ];
 export default function Footer() {
   return (
-    <div className="w-full z-50 relative flex flex-col-reverse md:flex-row items-center justify-center gap-3 mb-[30px] md:justify-between max-w-[1170px] mx-auto px-4 xl:px-0">
+    <div className="w-full z-50 relative flex flex-col-reverse md:flex-row items-center justify-center gap-3 mb-[30px] md:justify-between max-w-screen-2xl mx-auto px-4 xl:px-0">
       <div className="text-xs text-[#97A1C0]">
         All rigths reserved. © 2024 ILUM
       </div>

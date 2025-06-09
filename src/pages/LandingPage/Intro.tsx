@@ -52,7 +52,7 @@ export default function Intro() {
         className="h-[370px] sm:h-[500px] md:h-full object-cover absolute bottom-[-40px] md:bottom-[-200px] left-[15%] md:left-1/4 z-0"
         alt=""
       /> */}
-      <div className="max-w-[1170px] top-[20%] md:top-[35%] z-20 md:-translate-y-1/2 relative md:px-0 px-5 my-auto mx-auto">
+      <div className="max-w-screen-2xl top-[20%] md:top-[35%] z-20 md:-translate-y-1/2 relative md:px-0 px-5 my-auto mx-auto">
         <div className="button-gradient w-fit text-xs flex gap-1 mx-auto">
           <p className="text-gradient uppercase">Powered by</p>
           <img src={LogoSession1} alt="" className="w-13" />
