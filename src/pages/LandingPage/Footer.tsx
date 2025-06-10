@@ -21,7 +21,7 @@ export default function Footer() {
   return (
     <div className="w-full z-50 relative flex flex-col-reverse md:flex-row items-center justify-center gap-3 mb-[30px] md:justify-between max-w-screen-2xl mx-auto px-4 xl:px-2">
       <div className="text-xs text-[#97A1C0]">
-        All rigths reserved. © 2025 ilum
+        All rigths reserved. © 2025 ilum.fi
       </div>
       <div className="flex gap-4">
         {socials.map(({ name, icon: Icon, link }) => (
