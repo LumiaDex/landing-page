@@ -3,6 +3,7 @@ import SquareX from "@/assets/images/square_x.png";
 import { Card } from "@/components/Card";
 import { cn } from "@/utils/cn";
 import React from "react";
+
 interface Capability {
   name: string;
   ilumFi: boolean | string;
@@ -60,16 +61,16 @@ const CompetitiveAdvantages: React.FC = () => {
   const renderStatus = (status: boolean | string) => {
     if (typeof status === "boolean") {
       return status ? (
-        <img src={Check} alt="" className="w-4 h-4 mx-auto" />
+        <img src={Check} alt="Check" className="w-4 h-4 mx-auto" />
       ) : (
-        <img src={SquareX} alt="" className="w-4 h-4 mx-auto" />
+        <img src={SquareX} alt="Cross" className="w-4 h-4 mx-auto" />
       );
     }
     return <img src={Check} alt="" className="w-4 h-4 mx-auto" />;
   };
 
   return (
-    <div className="container  p-4 flex flex-col gap-8 max-w-screen-lg mx-auto">
+    <div className="container p-4 flex flex-col gap-8 max-w-screen-lg mx-auto">
       <div className="button-gradient w-fit text-xs flex gap-1 uppercase">
         ilum.fi Competitive Advantages
       </div>
@@ -78,10 +79,10 @@ const CompetitiveAdvantages: React.FC = () => {
           <thead>
             <tr className="bg-gray-800 text-white text-center">
               <th className="p-4 text-left">Capability</th>
-              <th className="p-2">ilum.fi</th>
-              <th className="p-2 whitespace-nowrap">Uniswap v3</th>
-              <th className="p-2 whitespace-nowrap">Gamma Strategies</th>
-              <th className="p-2 whitespace-nowrap">Euclid Protocol</th>
+              <th className="p-2 w-1/5">ilum.fi</th>
+              <th className="p-2 w-1/5">Uniswap v3</th>
+              <th className="p-2 w-1/5">Gamma Strategies</th>
+              <th className="p-2 w-1/5">Euclid Protocol</th>
             </tr>
           </thead>
           <tbody>
@@ -90,26 +91,26 @@ const CompetitiveAdvantages: React.FC = () => {
                 key={index}
                 className={cn(
                   "border-b border-gray-700 text-sm",
-                  index == capabilities.length - 1 && "border-b-0"
+                  index === capabilities.length - 1 && "border-b-0"
                 )}
               >
                 <td className="p-4 text-gradient text-sm">{cap.name}</td>
-                <td className="p-2 text-green-400 whitespace-nowrap text-center relative">
+                <td className="p-2 text-green-400 whitespace-nowrap w-1/5 text-center relative">
                   {renderStatus(cap.ilumFi)}{" "}
                   <div className="absolute top-1/2 -translate-y-1/2 right-1/2 translate-x-[55px]">
                     {cap.ilumFi}
                   </div>
                 </td>
-                <td className="p-2 text-red-400 text-center">
+                <td className="p-2 text-red-400 text-center w-1/5">
                   {renderStatus(cap.uniswapV3)}
                 </td>
-                <td className="p-2 text-green-400 whitespace-nowrap text-center relative">
+                <td className="p-2 text-green-400 whitespace-nowrap w-1/5 text-center relative">
                   {renderStatus(cap.gammaStrategies)}{" "}
-                  <div className="absolute top-1/2 -translate-y-1/2 right-1/2 translate-x-[70px] ">
+                  <div className="absolute top-1/2 -translate-y-1/2 right-1/2 translate-x-[70px]">
                     {cap.gammaStrategies}
                   </div>
                 </td>
-                <td className="p-2 text-red-400 text-center">
+                <td className="p-2 text-red-400 text-center w-1/5">
                   {renderStatus(cap.euclidProtocol)}
                 </td>
               </tr>

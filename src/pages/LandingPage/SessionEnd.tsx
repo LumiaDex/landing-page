@@ -13,7 +13,7 @@ const data = [
 ];
 export const SessionEnd = () => {
   return (
-    <div className="mt-[300px] md:mb-[100px] px-4 xl:px-0 max-w-screen-lg mx-auto">
+    <div className="mt-[300px] md:mb-[100px] px-4 xl:px-2 max-w-screen-lg mx-auto">
       <div className="relative">
         <div className="absolute top-20 -left-24 md:left-6">
           <img
@@ -37,7 +37,7 @@ export const SessionEnd = () => {
               </div>
             </div>
             <div className="text-[28px] md:text-[40px] font-[500] text-gradient">
-              Get started now
+              Alpha v.1 Coming Q2 2025
             </div>
             <div className="text-[#97A1C0] text-[12px] md:text-[14px] text-center">
               Swap crypto at the best rates

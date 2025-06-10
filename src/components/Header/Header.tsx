@@ -83,12 +83,12 @@ export default function Header() {
             onClick={() => {
               window.open(LINK_TO_APP + "/swap");
             }}
-            className="button-gradient flex h-12 items-center gap-4 ml-auto !pr-2"
+            // className="button-gradient flex h-12 items-center gap-4 ml-auto !pr-2"
           >
-            <span className="text-md font-medium whitespace-nowrap">
+            {/* <span className="text-md font-medium whitespace-nowrap">
               Enter Ilum.fi
             </span>
-            <ArrowIcon />
+            <ArrowIcon /> */}
           </button>
         </div>
         {/* <div
