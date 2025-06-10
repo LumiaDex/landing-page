@@ -51,7 +51,7 @@ const items = [
     title: [
       {
         label: "Precision Analytics",
-        text: "Real-time AI market analysis identifies optimal entry and exit opportunities.",
+        text: "Real-Time AI market analysis identifies optimal entry and exit opportunities.",
       },
       {
         label: "Intelligent Investment",

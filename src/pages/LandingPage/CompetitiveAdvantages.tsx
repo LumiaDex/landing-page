@@ -28,7 +28,7 @@ const capabilities: Capability[] = [
     euclidProtocol: false,
   },
   {
-    name: "Real-time Trading Insights",
+    name: "Real-Time Trading Insights",
     ilumFi: true,
     uniswapV3: false,
     gammaStrategies: false,
