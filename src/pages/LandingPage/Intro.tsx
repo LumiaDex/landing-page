@@ -61,7 +61,7 @@ export default function Intro() {
           Trade Smarter with AI, Go Farther Across Chains
         </div>
         <div className="w-full ">
-          <h1 className="text-[50px] uppercase leading-[1.3em] font-normal text-gradient md:text-[80px] md:leading-[84px] text-center">
+          <h1 className="text-[50px]  leading-[1.3em] font-normal text-gradient md:text-[80px] md:leading-[84px] text-center">
             Where DeFi, AI, and
             <br className="md:block hidden" /> Real-World Assets Converge
           </h1>
