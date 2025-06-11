@@ -37,11 +37,11 @@ const items = [
     logo: LogoSession2,
     title: [
       {
-        label: "$ILM Token",
+        label: "$ILUM Token",
         text: "Empowering community governance and rewarding participation.",
       },
     ],
-    label: "$ILM Token",
+    label: "$ILUM Token",
   },
 ];
 
