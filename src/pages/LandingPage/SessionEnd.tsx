@@ -36,7 +36,7 @@ export const SessionEnd = () => {
               </div>
             </div>
             <div className="text-[28px] md:text-[40px] font-[500] text-gradient text-center">
-              Alpha v.1 - Q2 2025
+              Alpha v.1 - 2025
             </div>
             <div className="text-[#97A1C0] text-[12px] md:text-[14px] text-center">
               Swap crypto at the best rates

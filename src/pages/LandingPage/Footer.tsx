@@ -1,4 +1,5 @@
 import XIcon from "@/components/socials/XIcon";
+import { Book } from "lucide-react";
 
 const socials = [
   // {
@@ -23,7 +24,11 @@ export default function Footer() {
       <div className="text-xs text-[#97A1C0]">
         All rigths reserved. © 2025 ilum.fi
       </div>
-      <div className="flex gap-4">
+      <div className="flex gap-4 items-center">
+        <a href="/docs-tc.pdf" className="" target="_blank">
+          <Book size={20} color="#97A1C0" />
+        </a>
+
         {socials.map(({ name, icon: Icon, link }) => (
           <a href={link} key={name} target="_blank">
             <Icon className="cursor-pointer" />
